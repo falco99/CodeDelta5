@@ -10,6 +10,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         super.onCreate(savedInstanceState);
         Caleb Sucks at this
+                Really bad
 
 
     }
