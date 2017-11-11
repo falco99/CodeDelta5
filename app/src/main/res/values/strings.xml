@@ -15,7 +15,7 @@
         completions."
     </string>
 
-    <!-- Tutoring Categories strings -->
+    <!-- Tutoring Categories strings, spinners-->
     <string-array name="level">
         <item>Elementary</item>
         <item>Middle School</item>
