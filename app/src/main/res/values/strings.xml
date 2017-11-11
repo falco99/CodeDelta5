@@ -16,11 +16,29 @@
     </string>
 
     <!-- Tutoring Categories strings, spinners-->
+    <!-- Spinner 1 Level (dummy values for now) -->
+    <string-array name="location">
+        <item>Arlington TX</item>
+        <item>Dallas TX</item>
+        <item>Tyler TX</item>
+    </string-array>
+
+    <!-- Spinner 2 Level -->
     <string-array name="level">
         <item>Elementary</item>
         <item>Middle School</item>
         <item>High School</item>
         <item>University</item>
+    </string-array>
+
+    <!-- Spinner 2 Level (Not an exhaustive list yet) -->
+    <string-array name="category">
+        <item>Math</item>
+        <item>Science</item>
+        <item>Language</item>
+        <item>Art</item>
+        <item>History</item>
+        <item>Writing</item>
     </string-array>
 
     <!-- payment strings-->

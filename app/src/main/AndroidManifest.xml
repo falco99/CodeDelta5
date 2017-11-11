@@ -28,6 +28,8 @@
         <activity android:name=".PaymentActivity"
             android:exported="true"/>
         <activity android:name=".PaymentMsgActivity"/>
+        <activity android:name=".TutoringCategories"
+            android:exported="true"/>
     </application>
 
 </manifest>
