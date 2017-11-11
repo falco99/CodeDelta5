@@ -15,12 +15,16 @@
         completions."
     </string>
 
-    <!-- Strings related to Tutoring Categories-->
-    <string-array name="level">
-        <item>Elementary</item>
-        <item>Middle School</item>
-        <item>High School</item>
-        <item>University</item>
+    <!-- payment strings-->
+    <string name="edit_message">Enter a message</string>
+    <string name="button_send">Send</string>
+
+    <string-array name="payment_array">
+        <item>Bob Burnsmith $5.00</item>
+        <item>Eliza Thornberry $3.11</item>
+        <item>Steven Bowsmith $21.48</item>
     </string-array>
+    <!---->
+
 
 </resources>
