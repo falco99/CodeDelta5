@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/CodeDelta.iml" filepath="$PROJECT_DIR$/CodeDelta.iml" />
+      <module fileurl="file://C:\Users\Jared\AndroidStudioProjects\CodeDelta5\CodeDelta.iml" filepath="C:\Users\Jared\AndroidStudioProjects\CodeDelta5\CodeDelta.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CodeDelta5.iml" filepath="$PROJECT_DIR$/CodeDelta5.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
