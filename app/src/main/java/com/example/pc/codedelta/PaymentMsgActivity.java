@@ -3,6 +3,7 @@ package com.example.pc.codedelta;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.text.NumberFormat;
@@ -24,6 +25,11 @@ public class PaymentMsgActivity extends AppCompatActivity {
         // Capture the layout's TextView and set the string as its text
         TextView textView = (TextView) findViewById(R.id.textView);
         textView.setText(message);
+
+        EditText editText = (EditText) findViewById(R.id.editText2);
+        String fieldVal = editText.getText().toString();
+        String numberOnly= fieldVal.replaceAll("[^0-9,.]", "");
+        double fieldValDbl = Double.parseDouble(numberOnly);
     }
 
 }
