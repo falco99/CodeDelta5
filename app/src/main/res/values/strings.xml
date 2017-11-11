@@ -14,4 +14,13 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+
+    <!-- Strings related to Tutoring Categories-->
+    <string-array name="level">
+        <item>Elementary</item>
+        <item>Middle School</item>
+        <item>High School</item>
+        <item>University</item>
+    </string-array>
+
 </resources>

@@ -10,6 +10,5 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         // some testing comment
 
-
     }
 }
