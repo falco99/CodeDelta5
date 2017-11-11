@@ -15,6 +15,14 @@
         completions."
     </string>
 
+    <!-- Tutoring Categories strings -->
+    <string-array name="level">
+        <item>Elementary</item>
+        <item>Middle School</item>
+        <item>High School</item>
+        <item>University</item>
+    </string-array>
+
     <!-- payment strings-->
     <string name="edit_message">Enter a message</string>
     <string name="button_send">Send</string>
