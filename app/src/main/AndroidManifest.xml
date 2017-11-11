@@ -25,11 +25,14 @@
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" />
-        <activity android:name=".PaymentActivity"
-            android:exported="true"/>
-        <activity android:name=".PaymentMsgActivity"/>
-        <activity android:name=".TutoringCategories"
-            android:exported="true"/>
+        <activity
+            android:name=".PaymentActivity"
+            android:exported="true" />
+        <activity android:name=".PaymentMsgActivity" />
+        <activity
+            android:name=".TutoringCategories"
+            android:exported="true" />
+        <activity android:name=".Appointments"></activity>
     </application>
 
 </manifest>
