@@ -32,7 +32,10 @@
         <activity
             android:name=".TutoringCategories"
             android:exported="true" />
-        <activity android:name=".Appointments"></activity>
+        <activity
+            android:name=".Appointments"
+            android:exported="true" />
+
     </application>
 
 </manifest>
