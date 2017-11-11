@@ -3,6 +3,8 @@ package com.example.pc.codedelta;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -19,17 +21,30 @@ public class PaymentMsgActivity extends AppCompatActivity {
 
         NumberFormat formatter = NumberFormat.getCurrencyInstance();
         String total_cost_str = String.valueOf(intent.getStringExtra(PaymentActivity.EXTRA_MESSAGE));
-        double cost = Double.parseDouble(total_cost_str);
+        final double cost = Double.parseDouble(total_cost_str);
         String message = "Amount due: " + formatter.format(cost);
 
         // Capture the layout's TextView and set the string as its text
         TextView textView = (TextView) findViewById(R.id.textView);
         textView.setText(message);
 
-        EditText editText = (EditText) findViewById(R.id.editText2);
-        String fieldVal = editText.getText().toString();
-        String numberOnly= fieldVal.replaceAll("[^0-9,.]", "");
-        double fieldValDbl = Double.parseDouble(numberOnly);
+        final EditText editText = (EditText) findViewById(R.id.editText2);
+        Button btn = (Button) findViewById(R.id.button2);
+        btn.setOnClickListener(
+                new View.OnClickListener() {
+                    public void onClick(View view) {
+                        String fieldVal = editText.getText().toString();
+                        String numberOnly = fieldVal.replaceAll("[^0-9,.]", "");
+                        double fieldValDbl = Double.parseDouble(numberOnly);
+                        if (fieldValDbl == cost) {
+                            editText.setText("suhhhh");
+                        } else {
+                            editText.setText("");
+                        }
+                    }
+                });
     }
+
+
 
 }
