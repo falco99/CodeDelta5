@@ -12,7 +12,7 @@ public class TutoringCategories extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutoring_categories);
 
-        // Spinner values 1,2,3,
+        // Spinner values 1,2,3
         Spinner mySpinner1 = (Spinner) findViewById(R.id.spinner1);
         Spinner mySpinner2 = (Spinner) findViewById(R.id.spinner2);
         Spinner mySpinner3 = (Spinner) findViewById(R.id.spinner3);
