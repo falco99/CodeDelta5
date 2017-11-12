@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import java.text.NumberFormat;
 
+
 public class PaymentMsgActivity extends AppCompatActivity {
 
     @Override
@@ -28,6 +29,7 @@ public class PaymentMsgActivity extends AppCompatActivity {
         final String invalid_pmnt = "Error: Invalid amount entered.";
         final String pay_prompt = "Enter dollar amount:";
         final String empty_holder = "";
+        final String bad_card = "Error: Invalid payment information.";
 
         // Capture the layout's TextView and set the string as its text
         TextView textView = (TextView) findViewById(R.id.textView);
@@ -35,6 +37,34 @@ public class PaymentMsgActivity extends AppCompatActivity {
 
         final EditText editText = (EditText) findViewById(R.id.editText2);
         Button btn = (Button) findViewById(R.id.button2);
+        Button btn2 = (Button) findViewById(R.id.button3);
+
+        btn2.setOnClickListener(
+                new View.OnClickListener() {
+                    public void onClick(View view) {
+                        editText.setText(empty_holder);
+                        new CountDownTimer(5000, 1000) {
+                            TextView textView2 = (TextView) findViewById(R.id.textView4);
+                            @Override
+                            public void onTick(long millisUntilFinished) {
+                                textView2.setTextColor(Color.RED);
+                                textView2.setText(bad_card);
+                            }
+
+                            @Override
+                            public void onFinish() {
+                                textView2.setTextColor(Color.BLACK);
+                                textView2.setText(pay_prompt);
+                            }
+
+                        }.start();
+
+
+
+                    }
+                });
+
+
         btn.setOnClickListener(
                 new View.OnClickListener() {
                     public void onClick(View view) {
@@ -42,7 +72,9 @@ public class PaymentMsgActivity extends AppCompatActivity {
                         String numberOnly = fieldVal.replaceAll("[^0-9,.]", "");
                         double fieldValDbl = Double.parseDouble(numberOnly);
                         if (fieldValDbl == cost) {
-                            editText.setText("suhhhh");
+                            //TODO: Delete from the database/array the payment that was successfully made
+                            finish();
+
                         } else {
                             editText.setText(empty_holder);
                             new CountDownTimer(5000, 1000) {
