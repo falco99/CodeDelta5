@@ -46,5 +46,4 @@ public class PaymentMsgActivity extends AppCompatActivity {
     }
 
 
-
 }

@@ -44,7 +44,9 @@
     <!-- payment strings-->
     <string name="edit_message">Enter a message</string>
     <string name="button_send">Send</string>
-
+    <string name = "button_submit">Submit</string>
+    <string name = "enter_price">Enter dollar amount:</string>
+    <string name = "empty_str"> </string>
     <string-array name="payment_array">
         <item>Bob Burnsmith $5.00</item>
         <item>Eliza Thornberry $3.11</item>
