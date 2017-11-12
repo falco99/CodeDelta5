@@ -32,19 +32,19 @@ public class PaymentMsgActivity extends AppCompatActivity {
         final String bad_card = "Error: Invalid payment information.";
 
         // Capture the layout's TextView and set the string as its text
-        TextView textView = (TextView) findViewById(R.id.textView);
+        TextView textView = findViewById(R.id.textView);
         textView.setText(message);
 
-        final EditText editText = (EditText) findViewById(R.id.editText2);
-        Button btn = (Button) findViewById(R.id.button2);
-        Button btn2 = (Button) findViewById(R.id.button3);
+        final EditText editText = findViewById(R.id.editText2);
+        Button btn = findViewById(R.id.button2);
+        Button btn2 = findViewById(R.id.button3);
 
         btn2.setOnClickListener(
                 new View.OnClickListener() {
                     public void onClick(View view) {
                         editText.setText(empty_holder);
                         new CountDownTimer(5000, 1000) {
-                            TextView textView2 = (TextView) findViewById(R.id.textView4);
+                            TextView textView2 = findViewById(R.id.textView4);
                             @Override
                             public void onTick(long millisUntilFinished) {
                                 textView2.setTextColor(Color.RED);
@@ -68,14 +68,14 @@ public class PaymentMsgActivity extends AppCompatActivity {
         btn.setOnClickListener(
                 new View.OnClickListener() {
                     public void onClick(View view) {
-                        String fieldVal = editText.getText().toString();
-                        String numberOnly = fieldVal.replaceAll("[^0-9,.]", "");
-                        double fieldValDbl = Double.parseDouble(numberOnly);
-                        if (fieldValDbl == cost) {
-                            //TODO: Delete from the database/array the payment that was successfully made
-                            finish();
-
-                        } else {
+                        boolean validPay = true;
+                        try {
+                            String fieldVal = editText.getText().toString();
+                            String numberOnly = fieldVal.replaceAll("[^0-9,.]", "");
+                            double fieldValDbl = Double.parseDouble(numberOnly);
+                        }
+                        catch(Exception e){
+                            validPay = false;
                             editText.setText(empty_holder);
                             new CountDownTimer(5000, 1000) {
                                 TextView textView2 = (TextView) findViewById(R.id.textView4);
@@ -93,7 +93,10 @@ public class PaymentMsgActivity extends AppCompatActivity {
 
                             }.start();
 
-
+                        }
+                        if(validPay)
+                        {
+                            finish();
                         }
                     }
                 });
