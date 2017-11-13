@@ -6,8 +6,6 @@
     android:orientation="vertical"
     android:padding="10dp"
     tools:context="com.example.pc.codedelta.LoginActivity">
-
-
     <TextView
         android:layout_width="wrap_content"
 
@@ -18,7 +16,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:hint="@string/fname" />
+        android:hint="@string/fname"
+        android:inputType="textPersonName" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -30,7 +29,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:hint="@string/lname" />
+        android:hint="@string/lname"
+        android:inputType="textPersonName" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -56,10 +56,33 @@
         android:layout_marginBottom="10dp"
         android:hint="@string/phone"
         android:inputType="phone" />
+    <TextView
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/etUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:hint="@string/username" />
+
+    <TextView
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/password"
+        android:inputType="textPassword" />
 
     <Button
-        android:id="@+id/bLogout"
-        android:text="@string/logout"
+        android:id="@+id/bRegister"
+        android:text="@string/register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

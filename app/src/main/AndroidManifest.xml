@@ -22,9 +22,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginActivity"
-            android:label="@string/title_activity_login" />
-        <activity
             android:name=".PaymentActivity"
             android:exported="true" />
         <activity android:name=".PaymentMsgActivity" />
@@ -37,8 +34,11 @@
         <activity
             android:name=".CurrentAppointmentActivity"
             android:exported="true" />
-        <activity android:name=".CalendarActivity"
-            android:exported="true"></activity>
+        <activity
+            android:name=".CalendarActivity"
+            android:exported="true" />
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".LoginActivity" />
     </application>
 
 </manifest>
