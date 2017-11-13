@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.pc.codedelta.Apppointments2Activity">
+    tools:context="com.example.pc.codedelta.Apppointments2Activity"
+    android:background="@drawable/blue"
+    >
 
     <TextView
         android:id="@+id/textView5"
