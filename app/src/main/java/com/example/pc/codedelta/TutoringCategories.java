@@ -1,16 +1,33 @@
 package com.example.pc.codedelta;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 
 public class TutoringCategories extends AppCompatActivity {
+
+    Button btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutoring_categories);
+
+        btn = (Button) findViewById(R.id.findtutor);
+        btn.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+
+                Intent intent = new Intent(TutoringCategories.this,TutorList.class);
+                startActivity(intent);
+            }
+        });
 
         // Spinner values 1,2,3
         Spinner mySpinner1 = (Spinner) findViewById(R.id.spinner1);
