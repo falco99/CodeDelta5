@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.pc.codedelta.CurrentAppointmentActivity"
-    android:background="@drawable/blue">
+    android:background="@drawable/frog">
 
     <TextView
         android:id="@+id/textView6"
@@ -15,7 +15,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Current Appointments"
-        android:textSize="40dp"
+        android:textColor="#ffff"
+        android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -31,9 +32,10 @@
         android:text="Create New appointment"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.336"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6"
-        app:layout_constraintVertical_bias="0.201" />
+        app:layout_constraintVertical_bias="0.301" />
 
     <Button
         android:id="@+id/button4"
@@ -46,6 +48,9 @@
         android:text="Cancel appointment"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.287"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:layout_constraintVertical_bias="0.584" />
+
 </android.support.constraint.ConstraintLayout>
