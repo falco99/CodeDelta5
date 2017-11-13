@@ -32,13 +32,6 @@
         <activity
             android:name=".TutoringCategories"
             android:exported="true" />
-        <activity
-            android:name=".Appointments"
-            android:exported="true" />
-        <activity
-            android:name=".Current_Appointments"
-            android:label="@string/title_activity_current__appointments"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
