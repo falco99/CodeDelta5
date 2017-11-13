@@ -21,10 +21,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Review" />
         <activity
             android:name=".LoginActivity"
-            android:label="@string/title_activity_login"></activity>
+            android:label="@string/title_activity_login" />
+        <activity
+            android:name=".PaymentActivity"
+            android:exported="true" />
+        <activity android:name=".PaymentMsgActivity" />
+        <activity
+            android:name=".TutoringCategories"
+            android:exported="true" />
+        <activity
+            android:name=".Apppointments2Activity"
+            android:exported="true" />
+        <activity
+            android:name=".CurrentAppointmentActivity"
+            android:exported="true" />
+        <activity android:name=".CalendarActivity"
+            android:exported="true"></activity>
     </application>
 
 </manifest>
