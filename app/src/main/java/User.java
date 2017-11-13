@@ -1,5 +1,7 @@
+/*
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
 
 
@@ -24,16 +26,28 @@ public class User {
     @ColumnInfo(name = "Email")
     private String emailAdd;
 
-    public User(String first, String last, String userN, String passW, String mailad){
-        this.firstName = first;
-        this.lastName = last;
-        this.userName = userN;
-        this.passWord = passW;
-        this.emailAdd = mailad;
+
+    @Ignore
+    public User() {
+        this.firstName = "";
+        this.lastName = "";
+        this.emailAdd = "";
+        this.passWord = "";
     }
 
+
+    //set userID
+    public void setUserId(int idNo){ this.uid = idNo;}
     //get userID
     public int getUserId(){return this.uid;}
+
+    public void setFirst(String first){this.firstName = first;}
+
+    public String getFirst(){return this.firstName;}
+
+    public void setLast(String last) {this.lastName = last;}
+
+    public String getLast(){return this.lastName;}
     // getting user
     public String getuser(){
         return this.userName;
@@ -59,10 +73,11 @@ public class User {
         return this.emailAdd;
     }
 
-    // setting pass
+    // setting email
     public void setmail(String mail){
         this.emailAdd = mail;
     }
 
 
 }
+*/
