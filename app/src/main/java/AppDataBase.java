@@ -1,3 +1,4 @@
+/*
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
@@ -6,8 +7,8 @@ import android.content.Context;
 /**
  * Created by Jared on 11/13/2017.
  */
-
-@Database(entities = {User.class}, version = 1)
+/*
+@Database(entities = {User.class}, version = 1,exportSchema = false)
 
 abstract public class AppDataBase extends RoomDatabase {
     private static AppDataBase INSTANCE;
@@ -31,3 +32,4 @@ abstract public class AppDataBase extends RoomDatabase {
         INSTANCE = null;
     }
 }
+*/
