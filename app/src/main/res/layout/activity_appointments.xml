@@ -7,7 +7,7 @@
     tools:context="com.example.pc.codedelta.Appointments">
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/appointments"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -18,7 +18,7 @@
         tools:layout_editor_absoluteY="132dp" />
 
     <Button
-        android:id="@+id/View Schedule"
+        android:id="@+id/schedule"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -29,7 +29,7 @@
         tools:layout_editor_absoluteY="231dp" />
 
     <Button
-        android:id="@+id/Calendar"
+        android:id="@+id/calendar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"

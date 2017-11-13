@@ -36,7 +36,7 @@ public class PaymentMsgActivity extends AppCompatActivity {
         textView.setText(message);
 
         final EditText editText = findViewById(R.id.editText2);
-        Button btn = findViewById(R.id.button2);
+        Button btn = findViewById(R.id.appointments);
         Button btn2 = findViewById(R.id.button3);
 
         btn2.setOnClickListener(

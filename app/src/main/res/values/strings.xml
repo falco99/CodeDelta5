@@ -44,10 +44,10 @@
     <!-- payment strings-->
     <string name="edit_message">Enter a message</string>
     <string name="button_send">Send</string>
-    <string name = "button_submit">Submit</string>
-    <string name = "enter_price">Enter dollar amount:</string>
-    <string name = "empty_str"> </string>
-    <string name = "invalid_payment">Error: Amounts do not match.</string>
+    <string name="button_submit">Submit</string>
+    <string name="enter_price">Enter dollar amount:</string>
+    <string name="empty_str"> </string>
+    <string name="invalid_payment">Error: Amounts do not match.</string>
 
 
     <string-array name="payment_array">
@@ -55,6 +55,7 @@
         <item>Eliza Thornberry $3.11</item>
         <item>Steven Bowsmith $21.48</item>
     </string-array>
+    <string name="title_activity_current__appointments">Current_Appointments</string>
     <!---->
 
 
