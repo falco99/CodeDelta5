@@ -8,7 +8,7 @@ import android.widget.Button;
 
 public class Apppointments2Activity extends AppCompatActivity {
 
-    Button btn;
+    Button btn,btn2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +23,17 @@ public class Apppointments2Activity extends AppCompatActivity {
 
                 Intent intent = new Intent(Apppointments2Activity.this,CurrentAppointmentActivity.class);
                         startActivity(intent);
+            }
+        });
+        btn2 = (Button) findViewById(R.id.Clndr);
+        btn2.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+
+                Intent intent = new Intent(Apppointments2Activity.this,CalendarActivity.class);
+                startActivity(intent);
             }
         });
     }
