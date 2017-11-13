@@ -36,8 +36,10 @@
             android:name=".CurrentAppointmentsActivity"
             android:label="@string/title_activity_current_appointments"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Apppointments2Activity" />
-        <activity android:name=".CurrentAppointmentActivity"></activity>
+        <activity android:name=".Apppointments2Activity"
+            android:exported="true"/>
+        <activity android:name=".CurrentAppointmentActivity"
+            android:exported="true"></activity>
     </application>
 
 </manifest>

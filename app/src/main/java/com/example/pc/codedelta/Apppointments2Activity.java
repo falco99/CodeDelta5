@@ -20,7 +20,8 @@ public class Apppointments2Activity extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
-                Intent intent = new Intent(Apppointments2Activity.this,CurrentAppointmentActivity.class)
+
+                Intent intent = new Intent(Apppointments2Activity.this,CurrentAppointmentActivity.class);
                         startActivity(intent);
             }
         });
