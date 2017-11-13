@@ -33,13 +33,11 @@
             android:name=".TutoringCategories"
             android:exported="true" />
         <activity
-            android:name=".AppointmentsActivity"
-            android:label="@string/title_activity_appointments"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".CurrentAppointmentsActivity"
             android:label="@string/title_activity_current_appointments"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Apppointments2Activity" />
+        <activity android:name=".CurrentAppointmentActivity"></activity>
     </application>
 
 </manifest>
