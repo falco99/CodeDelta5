@@ -19,5 +19,6 @@ public class RegisterActivity extends AppCompatActivity{
         final EditText etPassword = findViewById(R.id.etPassword);
         final EditText etDob = findViewById(R.id.etDob);
         final Button bRegister = findViewById(R.id.bRegister);
+
     }
 }
