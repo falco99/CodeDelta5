@@ -58,6 +58,19 @@
     <string name="title_activity_current__appointments">Current_Appointments</string>
     <string name="title_activity_appointments">AppointmentsActivity</string>
     <string name="title_activity_current_appointments">CurrentAppointmentsActivity</string>
+    <string name="username">username</string>
+    <string name="password">password</string>
+    <string name="login">Login</string>
+    <string name="new_user_register">New user? Register</string>
+    <string name="register">Register</string>
+    <string name="logout">Logout</string>
+    <string name="phone">0987654321</string>
+    <string name="fname">fname</string>
+    <string name="lname">lname</string>
+    <string name="dob">10/10/1980</string>
+    <string name="name">name</string>
+    <string name="CourseList">CourseList</string>
+    <string name="searchClass">SearchClass</string>
     <!---->
 
 
