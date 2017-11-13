@@ -56,6 +56,8 @@
         <item>Steven Bowsmith $21.48</item>
     </string-array>
     <string name="title_activity_current__appointments">Current_Appointments</string>
+    <string name="title_activity_appointments">AppointmentsActivity</string>
+    <string name="title_activity_current_appointments">CurrentAppointmentsActivity</string>
     <!---->
 
 
