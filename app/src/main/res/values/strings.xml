@@ -68,6 +68,9 @@
     <string name="fname">fname</string>
     <string name="lname">lname</string>
     <string name="dob">10/10/1980</string>
+    <string name="name">name</string>
+    <string name="CourseList">CourseList</string>
+    <string name="searchClass">SearchClass</string>
     <!---->
 
 
