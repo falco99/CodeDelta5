@@ -29,7 +29,13 @@ public class LoginActivity extends AppCompatActivity {
 
         }
     });
-
+bLogin.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        Intent profile = new Intent(LoginActivity.this,ProfileActivity.class);
+        LoginActivity.this.startActivity(profile);
+    }
+});
 
 
 
