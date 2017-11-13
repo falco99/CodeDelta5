@@ -4,17 +4,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
 
 public class Apppointments2Activity extends AppCompatActivity {
 
-    Button btn,btn2;
+    ImageButton btn,btn2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_apppointments2);
 
-        btn = (Button) findViewById(R.id.ViewSchd);
+        btn = (ImageButton) findViewById(R.id.schdbttn);
         btn.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -25,7 +25,7 @@ public class Apppointments2Activity extends AppCompatActivity {
                         startActivity(intent);
             }
         });
-        btn2 = (Button) findViewById(R.id.Clndr);
+        btn2 = (ImageButton) findViewById(R.id.clndrbttn);
         btn2.setOnClickListener(new View.OnClickListener()
         {
             @Override
