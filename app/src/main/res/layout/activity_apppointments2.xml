@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.pc.codedelta.Apppointments2Activity"
-    android:background="@drawable/frog"
+    android:background="@drawable/purp"
     >
 
     <TextView
@@ -36,10 +36,10 @@
         android:text="View Schedule"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.26"
+        app:layout_constraintHorizontal_bias="0.046"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:layout_constraintVertical_bias="0.275" />
+        app:layout_constraintVertical_bias="0.617" />
 
     <Button
         android:id="@+id/Clndr"
@@ -49,12 +49,19 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="View Calendar
-"
+        android:text="View Calendar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.262"
+        app:layout_constraintHorizontal_bias="0.847"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:layout_constraintVertical_bias="0.505" />
+        app:layout_constraintVertical_bias="0.614" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/frogTut"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="8dp" />
 </android.support.constraint.ConstraintLayout>
