@@ -2,9 +2,9 @@ import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
-@Entity
+@Entity(tableName = "user")
 public class User {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     private int uid;
 
     @ColumnInfo(name = "first_name")
@@ -30,6 +30,8 @@ public class User {
         this.emailAdd = mailad;
     }
 
+    //get userID
+    public int getUserId(){return this.uid;}
     // getting user
     public String getuser(){
         return this.userName;
