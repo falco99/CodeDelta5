@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.pc.codedelta.CurrentAppointmentActivity"
-    android:background="@drawable/royalpurp">
+    android:background="@drawable/purple5">
 
     <Button
         android:id="@+id/NewAppt"
