@@ -19,6 +19,7 @@
         android:layout_marginBottom="10dp"
         android:hint="             username"
         android:textColorHint="#ffffff"
+        android:textColor="#ffffff"
         android:inputType="text" />
 
     <TextView
@@ -42,14 +43,14 @@
         android:textSize="25dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/grnbtn"
+        android:background="@drawable/greybtn"
         />
     <TextView
 
         android:id="@+id/tvRegisterLink"
         android:layout_width="wrap_content"
         android:text="new_user_register"
-        android:textColor="#ffffff"
+        android:textColor="#00ffff"
         android:textStyle="bold"
         android:layout_gravity="center_horizontal"
         android:layout_height="wrap_content" />
