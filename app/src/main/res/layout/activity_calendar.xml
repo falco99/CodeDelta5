@@ -5,27 +5,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.pc.codedelta.CalendarActivity"
-    android:background="@drawable/purp">
+    android:background="@drawable/purple5">
 
     <com.github.sundeepk.compactcalendarview.CompactCalendarView xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/compactcalendar_view"
-        android:layout_width="fill_parent"
-        android:layout_height="595dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="601dp"
+        android:layout_height="447dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        app:compactCalendarBackgroundColor="#000000"
+        app:compactCalendarBackgroundColor="#ffffff"
         app:compactCalendarCurrentDayBackgroundColor="#B71C1C"
         app:compactCalendarCurrentSelectedDayBackgroundColor="#E57373"
         app:compactCalendarMultiEventIndicatorColor="#fff"
         app:compactCalendarTargetHeight="500dp"
-        app:compactCalendarTextColor="#fff"
+        app:compactCalendarTextColor="#000000"
         app:compactCalendarTextSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.097"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="409dp"
+        android:layout_height="228dp"
+        app:srcCompat="@drawable/frogtut"
+        tools:layout_editor_absoluteX="-1dp"
+        tools:layout_editor_absoluteY="-32dp" />
 
 </android.support.constraint.ConstraintLayout>
