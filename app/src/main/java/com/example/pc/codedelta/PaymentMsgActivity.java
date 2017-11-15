@@ -77,7 +77,7 @@ public class PaymentMsgActivity extends AppCompatActivity {
                         boolean validPay = true;
                         try {
                             String fieldVal = editText.getText().toString();
-                            String numberOnly = fieldVal.replaceAll("[^0-9,.]", "");
+                            String numberOnly = fieldVal.replaceAll("[^0-9,.-]", "");
                             double fieldValDbl = Double.parseDouble(numberOnly);
                         }
                         catch(Exception e){
@@ -116,7 +116,7 @@ public class PaymentMsgActivity extends AppCompatActivity {
                             String arrNumbersOnly = ((CodeDelta5)getApplicationContext()).myGlobalArray.get(i).replaceAll("[^0-9,.]", "");
                             double arrDouble = Double.parseDouble(arrNumbersOnly);
                             String fieldVal = editText.getText().toString();
-                            String numberOnly = fieldVal.replaceAll("[^0-9,.]", "");
+                            String numberOnly = fieldVal.replaceAll("[^0-9,.-]", "");
                             double fieldValDbl = Double.parseDouble(numberOnly);
                             if(arrDouble == fieldValDbl)
                             {
@@ -142,7 +142,7 @@ public class PaymentMsgActivity extends AppCompatActivity {
 
                                 }.start();
                             }
-                            else if(fieldValDbl<0)
+                            else if(fieldValDbl<0.00)
                             {
                                 editText.setText(empty_holder);
                                 new CountDownTimer(5000, 1000) {
