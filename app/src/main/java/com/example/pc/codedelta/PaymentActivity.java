@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -42,15 +43,20 @@ public class PaymentActivity extends AppCompatActivity {
 
     /** Called when the user taps the Send button */
     public void sendMessage(View view) {
-        //android:entries="@array/payment_array"
-        // Do something in response to button
-        Intent intent = new Intent(this, PaymentMsgActivity.class);
-        Spinner spinner1 =  findViewById(R.id.spinner);
-        String spinnerVal = spinner1.getSelectedItem().toString();
-        String numberOnly= spinnerVal.replaceAll("[^0-9,.]", "");
-        double value = Double.parseDouble(numberOnly);
-        String total_val = String.valueOf(value);
-        intent.putExtra(EXTRA_MESSAGE, total_val);
-        startActivity(intent);
+        if(((CodeDelta5)getApplicationContext()).myGlobalArray.isEmpty())
+        {
+            Toast.makeText(this, "No payments to process!",
+                    Toast.LENGTH_LONG).show();
+        }
+        else {
+            Intent intent = new Intent(this, PaymentMsgActivity.class);
+            Spinner spinner1 = findViewById(R.id.spinner);
+            String spinnerVal = spinner1.getSelectedItem().toString();
+            String numberOnly = spinnerVal.replaceAll("[^0-9,.]", "");
+            double value = Double.parseDouble(numberOnly);
+            String total_val = String.valueOf(value);
+            intent.putExtra(EXTRA_MESSAGE, total_val);
+            startActivity(intent);
+        }
     }
 }

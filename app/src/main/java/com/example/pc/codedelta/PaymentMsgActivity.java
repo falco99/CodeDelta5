@@ -33,6 +33,7 @@ public class PaymentMsgActivity extends AppCompatActivity {
         final String empty_holder = "";
         final String bad_card = "Error: Invalid payment information.";
         final String over_paid = "Error: Amount entered was too high.";
+        final String neg_val = "Error: Negative value entered.";
 
 
 
@@ -131,6 +132,26 @@ public class PaymentMsgActivity extends AppCompatActivity {
                                     public void onTick(long millisUntilFinished) {
                                         textView2.setTextColor(Color.RED);
                                         textView2.setText(over_paid);
+                                    }
+
+                                    @Override
+                                    public void onFinish() {
+                                        textView2.setTextColor(Color.BLACK);
+                                        textView2.setText(pay_prompt);
+                                    }
+
+                                }.start();
+                            }
+                            else if(fieldValDbl<0)
+                            {
+                                editText.setText(empty_holder);
+                                new CountDownTimer(5000, 1000) {
+                                    TextView textView2 = findViewById(R.id.textView4);
+
+                                    @Override
+                                    public void onTick(long millisUntilFinished) {
+                                        textView2.setTextColor(Color.RED);
+                                        textView2.setText(neg_val);
                                     }
 
                                     @Override
