@@ -45,7 +45,9 @@
         <activity
             android:name=".Currentappointments2Activity"
             android:label="@string/title_activity_currentappointments2"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme"
+            android:exported="true" />
+
     </application>
 
 </manifest>

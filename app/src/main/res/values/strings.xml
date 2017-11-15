@@ -73,6 +73,14 @@
     <string name="searchClass">SearchClass</string>
     <string name="title_activity_currentappointments2">Currentappointments2Activity</string>
     <!---->
+    <string-array name="tutors">
+        <item>Jon</item>
+        <item>Chris</item>
+    </string-array>
+    <string-array name="appointments">
+        <item>Monday 2pm Arlington</item>
+        <item>Tuesday 3:30pm Dallas</item>
+    </string-array>
 
 
 </resources>
