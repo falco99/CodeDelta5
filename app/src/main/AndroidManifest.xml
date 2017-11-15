@@ -36,18 +36,15 @@
             android:name=".Apppointments2Activity"
             android:exported="true" />
         <activity
-            android:name=".CurrentAppointmentActivity"
-            android:exported="true" />
-        <activity
             android:name=".CalendarActivity"
             android:exported="true" />
         <activity android:name=".ProfileActivity" />
         <activity
             android:name=".Currentappointments2Activity"
+            android:exported="true"
             android:label="@string/title_activity_currentappointments2"
-            android:theme="@style/AppTheme"
-            android:exported="true" />
-
+            android:theme="@style/AppTheme" />
+        <activity android:name=".currentappointments2Activity"></activity>
     </application>
 
 </manifest>
