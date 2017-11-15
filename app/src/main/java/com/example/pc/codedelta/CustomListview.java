@@ -32,6 +32,9 @@ public class CustomListview extends ArrayAdapter<String> {
 
     @NonNull
     @Override
+    public int getCount(){
+        return tutorname.length;
+    }
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         View r = convertView;
         ViewHolder viewHolder = null;
