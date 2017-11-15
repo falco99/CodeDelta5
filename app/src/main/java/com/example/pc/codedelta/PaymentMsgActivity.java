@@ -32,6 +32,7 @@ public class PaymentMsgActivity extends AppCompatActivity {
         final String pay_prompt = "Enter dollar amount:";
         final String empty_holder = "";
         final String bad_card = "Error: Invalid payment information.";
+        final String over_paid = "Error: Amount entered was too high.";
 
 
 
@@ -116,16 +117,43 @@ public class PaymentMsgActivity extends AppCompatActivity {
                             String fieldVal = editText.getText().toString();
                             String numberOnly = fieldVal.replaceAll("[^0-9,.]", "");
                             double fieldValDbl = Double.parseDouble(numberOnly);
-                            if(arrNumbersOnly.compareTo(total_cost_str) == 0)
+                            if(arrDouble == fieldValDbl)
                             {
                                 ((CodeDelta5)getApplicationContext()).myGlobalArray.remove(i);
-                            }
-                            else if(arrDouble>fieldValDbl)
-                            {
-
-                            }
-
                                 finish();
+                            }
+                            else if(fieldValDbl>arrDouble) {
+                                editText.setText(empty_holder);
+                                new CountDownTimer(5000, 1000) {
+                                    TextView textView2 = findViewById(R.id.textView4);
+
+                                    @Override
+                                    public void onTick(long millisUntilFinished) {
+                                        textView2.setTextColor(Color.RED);
+                                        textView2.setText(over_paid);
+                                    }
+
+                                    @Override
+                                    public void onFinish() {
+                                        textView2.setTextColor(Color.BLACK);
+                                        textView2.setText(pay_prompt);
+                                    }
+
+                                }.start();
+                            }
+                            else
+                            {
+                                String temp = ((CodeDelta5)getApplicationContext()).myGlobalArray.get(i);
+                                Double temp_doub = arrDouble - fieldValDbl;
+                                int iend = temp.indexOf("$");
+                                String newPart1 = temp.substring(0,iend);
+                                NumberFormat formatter = NumberFormat.getCurrencyInstance();
+                                System.out.println(formatter.format(temp_doub));
+                                String mulah = "" + formatter.format(temp_doub);
+                                newPart1 = newPart1.concat(mulah);
+                                ((CodeDelta5)getApplicationContext()).myGlobalArray.set(i, newPart1);
+                                finish();
+                            }
                         }
                     }
                 });

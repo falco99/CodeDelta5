@@ -14,23 +14,29 @@ import static android.R.id.message;
 
 
 public class PaymentActivity extends AppCompatActivity {
-    ArrayList<String> payTo = new ArrayList<>();
 
     public static final String EXTRA_MESSAGE = "com.example.pc.codedelta.MESSAGE";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
-
-
-
-
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, ((CodeDelta5)getApplicationContext()).myGlobalArray);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         Spinner spinner =  findViewById(R.id.spinner);
         spinner.setAdapter(adapter);
     }
 
+    @Override
+    public void onResume(){
+        super.onResume();
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, ((CodeDelta5)getApplicationContext()).myGlobalArray);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        Spinner spinner =  findViewById(R.id.spinner);
+        spinner.setAdapter(null);
+        spinner.setAdapter(adapter);
+
+
+    }
 
 
 
