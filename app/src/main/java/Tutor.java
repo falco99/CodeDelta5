@@ -18,8 +18,6 @@ public class Tutor {
     private String Fname;
     private String Lname;
     private String Bio;
-    private boolean tutor;//if 1 tutor, if 0 not
-    private boolean user;// if 1 user, if 0 not
     // private ProfilePicture, need to figure out how to add an image for the tutor's profile picture.
 
 }
