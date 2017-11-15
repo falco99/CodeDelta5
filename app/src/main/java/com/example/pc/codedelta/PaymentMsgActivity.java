@@ -9,8 +9,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.NumberFormat;
+import java.util.ArrayList;
 
 
 public class PaymentMsgActivity extends AppCompatActivity {
@@ -23,13 +25,15 @@ public class PaymentMsgActivity extends AppCompatActivity {
         Intent intent = getIntent();
 
         NumberFormat formatter = NumberFormat.getCurrencyInstance();
-        String total_cost_str = String.valueOf(intent.getStringExtra(PaymentActivity.EXTRA_MESSAGE));
+        final String total_cost_str = String.valueOf(intent.getStringExtra(PaymentActivity.EXTRA_MESSAGE));
         final double cost = Double.parseDouble(total_cost_str);
         String message = "Amount due: " + formatter.format(cost);
         final String invalid_pmnt = "Error: Invalid amount entered.";
         final String pay_prompt = "Enter dollar amount:";
         final String empty_holder = "";
         final String bad_card = "Error: Invalid payment information.";
+
+
 
         // Capture the layout's TextView and set the string as its text
         TextView textView = findViewById(R.id.textView);
@@ -96,7 +100,32 @@ public class PaymentMsgActivity extends AppCompatActivity {
                         }
                         if(validPay)
                         {
-                            finish();
+
+
+                            int i;
+                            for(i = 0; i <((CodeDelta5)getApplicationContext()).myGlobalArray.size(); i ++)
+                            {
+                                if(((CodeDelta5)getApplicationContext()).myGlobalArray.get(i).contains(total_cost_str))
+                                {
+                                    break;
+                                }
+
+                            }
+                            String arrNumbersOnly = ((CodeDelta5)getApplicationContext()).myGlobalArray.get(i).replaceAll("[^0-9,.]", "");
+                            double arrDouble = Double.parseDouble(arrNumbersOnly);
+                            String fieldVal = editText.getText().toString();
+                            String numberOnly = fieldVal.replaceAll("[^0-9,.]", "");
+                            double fieldValDbl = Double.parseDouble(numberOnly);
+                            if(arrNumbersOnly.compareTo(total_cost_str) == 0)
+                            {
+                                ((CodeDelta5)getApplicationContext()).myGlobalArray.remove(i);
+                            }
+                            else if(arrDouble>fieldValDbl)
+                            {
+
+                            }
+
+                                finish();
                         }
                     }
                 });

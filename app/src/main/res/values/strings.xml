@@ -50,6 +50,7 @@
     <string name="invalid_payment">Error: Amounts do not match.</string>
 
 
+
     <string-array name="payment_array">
         <item>Bob Burnsmith $5.00</item>
         <item>Eliza Thornberry $3.11</item>

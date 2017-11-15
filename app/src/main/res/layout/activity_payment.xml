@@ -40,7 +40,7 @@
         android:layout_marginBottom="16dp"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintVertical_bias="0.318"
-        android:entries="@array/payment_array"
+
 
         />
 
