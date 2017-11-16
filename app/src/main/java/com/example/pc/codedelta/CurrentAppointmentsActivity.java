@@ -25,7 +25,7 @@ public class CurrentAppointmentsActivity extends AppCompatActivity {
 
         List<HashMap<String, String>> aList = new ArrayList<HashMap<String, String>>();
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 2; i++) {
             HashMap<String, String> hm = new HashMap<String, String>();
             hm.put("tut", "Country : " + tutors[i]);
             hm.put("appt", "Currency : " + appt[i]);

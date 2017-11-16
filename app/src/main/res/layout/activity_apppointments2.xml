@@ -48,8 +48,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Make New, Cancel,
-r See Appointments"
+        android:text="Make New, Cancel,See Appointments"
         android:textColor="#ffffff"
         android:textSize="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
