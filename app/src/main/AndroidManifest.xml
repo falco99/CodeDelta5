@@ -43,7 +43,8 @@
         <activity
             android:name=".TestCalendarActivity"
             android:exported="true" />
-        <activity android:name=".TestAppointmentListActivity"></activity>
+        <activity android:name=".TestAppointmentListActivity"
+            android:exported="true"></activity>
     </application>
 
 </manifest>

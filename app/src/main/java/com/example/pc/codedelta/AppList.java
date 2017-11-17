@@ -1,13 +1,15 @@
+package com.example.pc.codedelta;
+
 /**
  * Created by Cory on 11/17/2017.
  */
 
-public class appointments {
+public class AppList {
     private String name;
     private String date;
     private String location;
 
-    public appointments(String name, String date, String location) {
+    public AppList(String name, String date, String location) {
         this.name = name;
         this.date = date;
         this.location = location;
