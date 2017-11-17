@@ -9,7 +9,7 @@ import android.widget.Button;
 public class appointments_Activity extends AppCompatActivity {
 
 
-    Button btn;
+    Button btn,btn2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +26,7 @@ public class appointments_Activity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
 
     }
 }
