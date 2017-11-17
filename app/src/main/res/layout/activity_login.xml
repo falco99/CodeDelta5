@@ -52,7 +52,17 @@
         android:text="new_user_register"
         android:textColor="#00ffff"
         android:textStyle="bold"
+        android:layout_marginBottom="35dp"
         android:layout_gravity="center_horizontal"
         android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tvForgot"
+        android:layout_width="116dp"
+        android:layout_height="wrap_content"
+        android:text="@string/Forgot_pswd"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textColor="#00ff00"/>
 
 </LinearLayout>

@@ -20,7 +20,7 @@ public class LoginActivity extends AppCompatActivity {
     final EditText etPassword = findViewById(R.id.etPassword);
     final Button bLogin = findViewById(R.id.bLogin);
     final TextView tvRegisterLink = findViewById(R.id.tvRegisterLink);
-
+    final TextView tvForgot = findViewById(R.id.tvForgot);
     tvRegisterLink.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -36,7 +36,13 @@ bLogin.setOnClickListener(new View.OnClickListener() {
         LoginActivity.this.startActivity(profile);
     }
 });
-
+tvForgot.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        Intent forgotten = new Intent(LoginActivity.this,PasswordResetActivity.class);
+        LoginActivity.this.startActivity(forgotten);
+    }
+});
 
 
     }

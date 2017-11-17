@@ -72,6 +72,8 @@
     <string name="CourseList">CourseList</string>
     <string name="searchClass">SearchClass</string>
     <string name="title_activity_currentappointments2">Currentappointments2Activity</string>
+    <string name="cancel">Cancel</string>
+    <string name="Forgot_pswd">forgot_pswd</string>
     <!---->
     <string-array name="tutors">
         <item>Jon</item>

@@ -33,14 +33,17 @@
             android:name=".TutoringCategories"
             android:exported="true" />
         <activity
-            android:name=".apppointments_Activity"
+            android:name=".RegisterActivity"
+            android:exported="true" />
+        <activity
+            android:name=".appointments_Activity"
             android:exported="true" />
         <activity
             android:name=".CalendarActivity"
             android:exported="true" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".appointment_view_Activity" />
-        <activity android:name=".appointments_Activity"></activity>
+        <activity android:name=".PasswordResetActivity"></activity>
     </application>
 
 </manifest>
