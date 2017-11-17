@@ -73,7 +73,9 @@
     <string name="searchClass">SearchClass</string>
     <string name="title_activity_currentappointments2">Currentappointments2Activity</string>
     <string name="cancel">Cancel</string>
-    <string name="Forgot_pswd">forgot_pswd</string>
+    <string name="Guest">Continue as Guest</string>
+    <string name="new_user">Register</string>
+    <string name="forgot_pswd">Fogot your password?</string>
     <!---->
     <string-array name="tutors">
         <item>Jon</item>

@@ -21,6 +21,8 @@ public class LoginActivity extends AppCompatActivity {
     final Button bLogin = findViewById(R.id.bLogin);
     final TextView tvRegisterLink = findViewById(R.id.tvRegisterLink);
     final TextView tvForgot = findViewById(R.id.tvForgot);
+    final TextView tvGuest = findViewById(R.id.tvGuest);
+
     tvRegisterLink.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -43,7 +45,13 @@ tvForgot.setOnClickListener(new View.OnClickListener() {
         LoginActivity.this.startActivity(forgotten);
     }
 });
-
+   tvGuest.setOnClickListener(new View.OnClickListener() {
+       @Override
+       public void onClick(View v) {
+           Intent guest = new Intent(LoginActivity.this,TutoringCategories.class);
+           LoginActivity.this.startActivity(guest);
+       }
+   });
 
     }
     }
