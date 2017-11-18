@@ -45,33 +45,34 @@
         android:layout_height="wrap_content"
         android:background="@drawable/yellowbtn"
         />
+
     <TextView
 
         android:id="@+id/tvRegisterLink"
         android:layout_width="wrap_content"
-        android:text="new_user_register"
-        android:textColor="#00ffff"
-        android:textStyle="bold"
-        android:layout_marginBottom="35dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_height="wrap_content" />
+        android:layout_marginBottom="35dp"
+        android:text="@string/new_user"
+        android:textColor="#00ffff"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tvForgot"
-        android:layout_width="116dp"
+        android:layout_width="162dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginBottom="50dp"
-        android:text="@string/passwd"
+        android:text="@string/forgot_pswd"
         android:textColor="#00ff00"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tvGuest"
-        android:layout_width="94dp"
+        android:layout_width="146dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textColor="#00ff00"
-        android:text="@string/Guest" />
+        android:text="@string/Guest"
+        android:textColor="#00ff00" />
 
 </LinearLayout>

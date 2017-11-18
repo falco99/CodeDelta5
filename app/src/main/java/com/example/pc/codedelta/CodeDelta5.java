@@ -10,6 +10,11 @@ import java.util.ArrayList;
 
 public class CodeDelta5 extends Application {
     public ArrayList<String> myGlobalArray = null;
+    public String ccNumber;
+    public String security_No;
+    public String ccMonth;
+    public String ccYear;
+
 
     public CodeDelta5() {
         myGlobalArray = new ArrayList<>();
@@ -18,5 +23,12 @@ public class CodeDelta5 extends Application {
             myGlobalArray.add("Steven Spielberg $15.30");
             myGlobalArray.add("John Johnson $105.50");
         }
+        ccNumber = 	"4012888888881881";
+        security_No = "302";
+        ccMonth = "8";
+        ccYear = "17";
+
+
+
     }
 }
