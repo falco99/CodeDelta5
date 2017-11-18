@@ -15,11 +15,21 @@ public class TestAppointmentListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_appointment_list);
         Log.d(TAG,"onCreate: Started.");
-        ListView mListView = (ListView) findViewById(R.id.listview);
+        ListView list = (ListView) findViewById(R.id.listview);
+
+        ArrayList<String> names = new ArrayList<>();
+        names.add("Steve Monday 12:00pm Arlington");
+        names.add("Chris Tuesday 3:00pm Arlington");
+        names.add("Steve Wednesday 4:00pm Arlington");
+        names.add("Chris Thursday 4:00pm Arlington");
+
+
+        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1,names);
+        list.setAdapter(adapter);
 
         //Create the appointment object)
 
-        AppList john = new AppList("John","Monday 12:00pm","Arlington");
+        /*AppList john = new AppList("John","Monday 12:00pm","Arlington");
         AppList chris = new AppList("Chris","Tueday 1:00pm","Arlington");
         AppList steve = new AppList("Steve","Wednesday 8:00pm","Arlington");
 
@@ -33,6 +43,6 @@ public class TestAppointmentListActivity extends AppCompatActivity {
 
         AppiontmentListAdapter adapter = new AppiontmentListAdapter(this, R.layout.adapter_view_layout,AppointmentList);
 
-
+*/
     }
 }
