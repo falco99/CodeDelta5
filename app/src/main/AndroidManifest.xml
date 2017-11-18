@@ -39,7 +39,6 @@
         <activity
             android:name=".appointments_Activity"
             android:exported="true" />
-        <activity android:name=".Appointments5Activity" />
         <activity
             android:name=".TestCalendarActivity"
             android:exported="true" />
