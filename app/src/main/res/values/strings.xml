@@ -76,6 +76,9 @@
     <string name="Guest">Continue as Guest</string>
     <string name="new_user">Register</string>
     <string name="forgot_pswd">Fogot your password?</string>
+    <string name="Request">Request an Appointment</string>
+    <string name="Send_msg">Send message</string>
+    <string name="Rating">Rating</string>
     <!---->
     <string-array name="tutors">
         <item>Jon</item>

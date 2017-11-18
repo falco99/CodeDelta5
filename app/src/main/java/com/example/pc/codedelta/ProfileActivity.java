@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class ProfileActivity extends AppCompatActivity {
 
@@ -14,6 +15,15 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
         final Button bLogout = findViewById(R.id.bLogout);
+        final TextView tvRequest =findViewById(R.id.tvRequest);
+
+        tvRequest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent app1 = new Intent(ProfileActivity.this,TestAppointmentListActivity.class);
+                ProfileActivity.this.startActivity(app1);
+            }
+        });
 
         bLogout.setOnClickListener(new View.OnClickListener() {
             @Override
