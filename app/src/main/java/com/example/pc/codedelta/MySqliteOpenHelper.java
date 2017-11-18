@@ -18,7 +18,7 @@ public class MySqliteOpenHelper extends SQLiteOpenHelper
     column_phone ="Phone",column_username ="username",column_password = "password";
 
    private String database_create_statement =
-           "create table"+ table_name+"("+column_id +" integer primary key autoincrement, "+column_Fname+"text not null" +column_Lname+"text not null"+
+           "create table"+ table_name+"("+column_id +" integer primary key autoincrement"+column_Fname+"text not null" +column_Lname+"text not null"+
            column_Dob+"text not null"+column_phone+"text not null"+column_username+"text not null" +column_password+ "text not null";
 
 
