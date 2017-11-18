@@ -3,46 +3,72 @@ package com.example.pc.codedelta;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
 public class TestAppointmentListActivity extends AppCompatActivity {
     private static final String TAG = "TestAppointmentListActi";
+
+    int[] images = {R.drawable.chrisprofile,R.drawable.trevorcartoonprofile,R.drawable.shelly,R.drawable.chrisprofile};
+    String[] names = {"Chris","Trevor","Shelly","Chris"};
+    String[] dates = {"Monday 12:00pm Arlington","Tuesday 12:00pm Arlington","Wednesday 12:00pm Arlington","Thursday 12:00pm Arlington"};
+    ListView list;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_appointment_list);
-        Log.d(TAG,"onCreate: Started.");
-        ListView list = (ListView) findViewById(R.id.listview);
+        Log.d(TAG, "onCreate: Started.");
+        list = (ListView) findViewById(R.id.listview);
 
-        ArrayList<String> names = new ArrayList<>();
-        names.add("Steve Monday 12:00pm Arlington");
-        names.add("Chris Tuesday 3:00pm Arlington");
-        names.add("Steve Wednesday 4:00pm Arlington");
-        names.add("Chris Thursday 4:00pm Arlington");
+        CustomAdapter customAdapter = new CustomAdapter();
 
+        list.setAdapter(customAdapter);
 
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1,names);
-        list.setAdapter(adapter);
-
-        //Create the appointment object)
-
-        /*AppList john = new AppList("John","Monday 12:00pm","Arlington");
-        AppList chris = new AppList("Chris","Tueday 1:00pm","Arlington");
-        AppList steve = new AppList("Steve","Wednesday 8:00pm","Arlington");
-
-
-        //Add the appointments to an array list
-
-        ArrayList<AppList> AppointmentList = new ArrayList<>();
-        AppointmentList.add(john);
-        AppointmentList.add(chris);
-        AppointmentList.add(steve);
-
-        AppiontmentListAdapter adapter = new AppiontmentListAdapter(this, R.layout.adapter_view_layout,AppointmentList);
-
-*/
     }
-}
+
+        class CustomAdapter extends BaseAdapter{
+
+            @Override
+            public int getCount() {
+                return images.length;
+            }
+
+            @Override
+            public Object getItem(int position) {
+                return null;
+            }
+
+            @Override
+            public long getItemId(int position) {
+                return 0;
+            }
+
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+
+                View view = getLayoutInflater().inflate(R.layout.customlayout, null);
+
+                ImageView mImageView = view.findViewById(R.id.imageView2);
+                TextView mNameView = view.findViewById(R.id.Name);
+                TextView mDateView = view.findViewById(R.id.Date);
+
+                mImageView.setImageResource(images[position]);
+                mNameView.setText(names[position]);
+                mDateView.setText(dates[position]);
+                return view;
+            }
+        }
+
+
+
+
+    }
+
