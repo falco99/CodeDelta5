@@ -17,7 +17,7 @@ public class TutoringCategories extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutoring_categories);
 
-        btn = (Button) findViewById(R.id.findtutor);
+        btn = findViewById(R.id.findtutor);
         btn.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -30,9 +30,9 @@ public class TutoringCategories extends AppCompatActivity {
         });
 
         // Spinner values 1,2,3
-        Spinner mySpinner1 = (Spinner) findViewById(R.id.spinner1);
-        Spinner mySpinner2 = (Spinner) findViewById(R.id.spinner2);
-        Spinner mySpinner3 = (Spinner) findViewById(R.id.spinner3);
+        Spinner mySpinner1 = findViewById(R.id.spinner1);
+        Spinner mySpinner2 = findViewById(R.id.spinner2);
+        Spinner mySpinner3 = findViewById(R.id.spinner3);
 
         // Code for Spinner 1
         ArrayAdapter<String> myAdapter1 = new ArrayAdapter<String>(TutoringCategories.this,

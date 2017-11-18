@@ -28,7 +28,7 @@ public class CalendarActivity extends AppCompatActivity {
         actionbar.setDisplayHomeAsUpEnabled(false);
         actionbar.setTitle(null);
 
-        compactCalendar = (CompactCalendarView) findViewById(R.id.compactcalendar_view);
+        compactCalendar = findViewById(R.id.compactcalendar_view);
         compactCalendar.setUseThreeLetterAbbreviation(true);
 
         //setting up an event
