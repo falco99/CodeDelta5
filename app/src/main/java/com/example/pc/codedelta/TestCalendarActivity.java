@@ -3,11 +3,11 @@ package com.example.pc.codedelta;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class appointment_view_Activity extends AppCompatActivity {
+public class TestCalendarActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_appointment_view_);
+        setContentView(R.layout.activity_test_calendar);
     }
 }
