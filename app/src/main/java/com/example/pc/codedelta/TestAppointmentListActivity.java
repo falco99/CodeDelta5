@@ -26,7 +26,7 @@ public class TestAppointmentListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_appointment_list);
         Log.d(TAG, "onCreate: Started.");
-        list = (ListView) findViewById(R.id.listview);
+        list = findViewById(R.id.listview);
 
         CustomAdapter customAdapter = new CustomAdapter();
 
