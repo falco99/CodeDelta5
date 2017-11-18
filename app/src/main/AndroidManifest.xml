@@ -37,15 +37,14 @@
             android:exported="true" />
         <activity android:name=".ProfileActivity" />
         <activity
-            android:name=".appointments_Activity"
-            android:exported="true" />
-        <activity
             android:name=".TestCalendarActivity"
             android:exported="true" />
         <activity
             android:name=".TestAppointmentListActivity"
             android:exported="true" />
-        <activity android:name=".payment_cc_entry"></activity>
+        <activity android:name=".payment_cc_entry" />
+        <activity android:name=".AppointmentsTestActivity"
+            android:exported="true"></activity>
     </application>
 
 </manifest>
