@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.pc.codedelta.appointments_Activity"
-    android:background="@drawable/Frogpurp">
+    android:background="@drawable/frogpurp">
 
     <TextView
         android:id="@+id/textView5"
@@ -92,6 +92,7 @@
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/appointments_text"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="36dp" />
+        tools:layout_editor_absoluteY="36dp"
+        tools:ignore="MissingConstraints" />
 
 </android.support.constraint.ConstraintLayout>
