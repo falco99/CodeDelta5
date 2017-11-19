@@ -14,11 +14,11 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class TutorList extends AppCompatActivity {
-    private static final String TAG = "TutorList";
+    private static final String TAG = "Tutorlist";
 
     int[] images = {R.drawable.chrisprofile,R.drawable.trevorcartoonprofile,R.drawable.shelly,R.drawable.chrisprofile};
     String[] names = {"Chris","Trevor","Shelly","Chris"};
-    String[] dates = {"Monday 12:00pm Arlington","Tuesday 12:00pm Arlington","Wednesday 12:00pm Arlington","Thursday 12:00pm Arlington"};
+    String[] dates = {"Sparks","Tuesday 12:00pm Arlington","Wednesday 12:00pm Arlington","Thursday 12:00pm Arlington"};// last name
     ListView list;
 
     @Override
@@ -54,17 +54,16 @@ public class TutorList extends AppCompatActivity {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
 
-            View view = getLayoutInflater().inflate(R.layout.customlayout, null);
+            View view = getLayoutInflater().inflate(R.layout.tutorlist_listview_layout, null);
 
-            ImageView mImageView = view.findViewById(R.id.imageView2);
-            TextView mNameView = view.findViewById(R.id.Name);
-            TextView mDateView = view.findViewById(R.id.Date);
+            ImageView mImageView = view.findViewById(R.id.imageViewTutorList);//.imageView2);
+            TextView mNameView = view.findViewById(R.id.tutorFName);
+            TextView mDateView = view.findViewById(R.id.tutorLName);
 
             mImageView.setImageResource(images[position]);
             mNameView.setText(names[position]);
             mDateView.setText(dates[position]);
             return view;
-            //come
         }
     }
 

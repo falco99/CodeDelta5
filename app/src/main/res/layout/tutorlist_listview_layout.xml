@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageViewTutorList"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="28dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/chrisprofile" />
+
+        <TextView
+            android:id="@+id/tutorFName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/imageViewTutorList"
+            android:layout_marginStart="33dp"
+            android:layout_toEndOf="@+id/imageViewTutorList"
+            android:text="First Name" />
+
+        <TextView
+            android:id="@+id/tutorLName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/tutorFName"
+            android:layout_below="@+id/tutorFName"
+            android:layout_marginTop="14dp"
+            android:text="Last Name" />
+    </RelativeLayout>
+</LinearLayout>
