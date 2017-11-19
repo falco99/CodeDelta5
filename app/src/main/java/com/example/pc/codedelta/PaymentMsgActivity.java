@@ -1,5 +1,6 @@
 package com.example.pc.codedelta;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.CountDownTimer;
@@ -48,22 +49,7 @@ public class PaymentMsgActivity extends AppCompatActivity {
         btn2.setOnClickListener(
                 new View.OnClickListener() {
                     public void onClick(View view) {
-                        editText.setText(empty_holder);
-                        new CountDownTimer(5000, 1000) {
-                            TextView textView2 = findViewById(R.id.textView4);
-                            @Override
-                            public void onTick(long millisUntilFinished) {
-                                textView2.setTextColor(Color.RED);
-                                textView2.setText(bad_card);
-                            }
-
-                            @Override
-                            public void onFinish() {
-                                textView2.setTextColor(Color.BLACK);
-                                textView2.setText(pay_prompt);
-                            }
-
-                        }.start();
+                       finish();
 
 
 
@@ -102,83 +88,196 @@ public class PaymentMsgActivity extends AppCompatActivity {
                         }
                         if(validPay)
                         {
+                            final int PICK_CONTACT_REQUEST = 1;
+                            Intent intent = new Intent(PaymentMsgActivity.this, payment_cc_entry.class);
+                            startActivityForResult(intent, PICK_CONTACT_REQUEST);
 
-
-                            int i;
-                            for(i = 0; i <((CodeDelta5)getApplicationContext()).myGlobalArray.size(); i ++)
-                            {
-                                if(((CodeDelta5)getApplicationContext()).myGlobalArray.get(i).contains(total_cost_str))
-                                {
-                                    break;
-                                }
-
-                            }
-                            String arrNumbersOnly = ((CodeDelta5)getApplicationContext()).myGlobalArray.get(i).replaceAll("[^0-9,.]", "");
-                            double arrDouble = Double.parseDouble(arrNumbersOnly);
-                            String fieldVal = editText.getText().toString();
-                            String numberOnly = fieldVal.replaceAll("[^0-9,.-]", "");
-                            double fieldValDbl = Double.parseDouble(numberOnly);
-                            if(arrDouble == fieldValDbl)
-                            {
-                                ((CodeDelta5)getApplicationContext()).myGlobalArray.remove(i);
-                                finish();
-                            }
-                            else if(fieldValDbl>arrDouble) {
-                                editText.setText(empty_holder);
-                                new CountDownTimer(5000, 1000) {
-                                    TextView textView2 = findViewById(R.id.textView4);
-
-                                    @Override
-                                    public void onTick(long millisUntilFinished) {
-                                        textView2.setTextColor(Color.RED);
-                                        textView2.setText(over_paid);
-                                    }
-
-                                    @Override
-                                    public void onFinish() {
-                                        textView2.setTextColor(Color.BLACK);
-                                        textView2.setText(pay_prompt);
-                                    }
-
-                                }.start();
-                            }
-                            else if(fieldValDbl<0.00)
-                            {
-                                editText.setText(empty_holder);
-                                new CountDownTimer(5000, 1000) {
-                                    TextView textView2 = findViewById(R.id.textView4);
-
-                                    @Override
-                                    public void onTick(long millisUntilFinished) {
-                                        textView2.setTextColor(Color.RED);
-                                        textView2.setText(neg_val);
-                                    }
-
-                                    @Override
-                                    public void onFinish() {
-                                        textView2.setTextColor(Color.BLACK);
-                                        textView2.setText(pay_prompt);
-                                    }
-
-                                }.start();
-                            }
-                            else
-                            {
-                                String temp = ((CodeDelta5)getApplicationContext()).myGlobalArray.get(i);
-                                Double temp_doub = arrDouble - fieldValDbl;
-                                int iend = temp.indexOf("$");
-                                String newPart1 = temp.substring(0,iend);
-                                NumberFormat formatter = NumberFormat.getCurrencyInstance();
-                                System.out.println(formatter.format(temp_doub));
-                                String mulah = "" + formatter.format(temp_doub);
-                                newPart1 = newPart1.concat(mulah);
-                                ((CodeDelta5)getApplicationContext()).myGlobalArray.set(i, newPart1);
-                                finish();
-                            }
+//                            int i;
+//                            for(i = 0; i <((CodeDelta5)getApplicationContext()).myGlobalArray.size(); i ++)
+//                            {
+//                                if(((CodeDelta5)getApplicationContext()).myGlobalArray.get(i).contains(total_cost_str))
+//                                {
+//                                    break;
+//                                }
+//
+//                            }
+//                            String arrNumbersOnly = ((CodeDelta5)getApplicationContext()).myGlobalArray.get(i).replaceAll("[^0-9,.]", "");
+//                            double arrDouble = Double.parseDouble(arrNumbersOnly);
+//                            String fieldVal = editText.getText().toString();
+//                            String numberOnly = fieldVal.replaceAll("[^0-9,.-]", "");
+//                            double fieldValDbl = Double.parseDouble(numberOnly);
+//                            if(arrDouble == fieldValDbl)
+//                            {
+//                                ((CodeDelta5)getApplicationContext()).myGlobalArray.remove(i);
+//                                finish();
+//                            }
+//                            else if(fieldValDbl>arrDouble) {
+//                                editText.setText(empty_holder);
+//                                new CountDownTimer(5000, 1000) {
+//                                    TextView textView2 = findViewById(R.id.textView4);
+//
+//                                    @Override
+//                                    public void onTick(long millisUntilFinished) {
+//                                        textView2.setTextColor(Color.RED);
+//                                        textView2.setText(over_paid);
+//                                    }
+//
+//                                    @Override
+//                                    public void onFinish() {
+//                                        textView2.setTextColor(Color.BLACK);
+//                                        textView2.setText(pay_prompt);
+//                                    }
+//
+//                                }.start();
+//                            }
+//                            else if(fieldValDbl<0.00)
+//                            {
+//                                editText.setText(empty_holder);
+//                                new CountDownTimer(5000, 1000) {
+//                                    TextView textView2 = findViewById(R.id.textView4);
+//
+//                                    @Override
+//                                    public void onTick(long millisUntilFinished) {
+//                                        textView2.setTextColor(Color.RED);
+//                                        textView2.setText(neg_val);
+//                                    }
+//
+//                                    @Override
+//                                    public void onFinish() {
+//                                        textView2.setTextColor(Color.BLACK);
+//                                        textView2.setText(pay_prompt);
+//                                    }
+//
+//                                }.start();
+//                            }
+//                            else
+//                            {
+//                                String temp = ((CodeDelta5)getApplicationContext()).myGlobalArray.get(i);
+//                                Double temp_doub = arrDouble - fieldValDbl;
+//                                int iend = temp.indexOf("$");
+//                                String newPart1 = temp.substring(0,iend);
+//                                NumberFormat formatter = NumberFormat.getCurrencyInstance();
+//                                System.out.println(formatter.format(temp_doub));
+//                                String mulah = "" + formatter.format(temp_doub);
+//                                newPart1 = newPart1.concat(mulah);
+//                                ((CodeDelta5)getApplicationContext()).myGlobalArray.set(i, newPart1);
+//                                finish();
+//                            }
                         }
                     }
                 });
     }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        Intent intent = getIntent();
+        NumberFormat formatter = NumberFormat.getCurrencyInstance();
+        final String total_cost_str = String.valueOf(intent.getStringExtra(PaymentActivity.EXTRA_MESSAGE));
+        final String invalid_pmnt = "Error: Invalid amount entered.";
+        final String pay_prompt = "Enter dollar amount:";
+        final String empty_holder = "";
+        final String bad_card = "Error: Invalid payment information.";
+        final String over_paid = "Error: Amount entered was too high.";
+        final String neg_val = "Error: Negative value entered.";
+        EditText editText = findViewById(R.id.editText2);
+        if(resultCode == Activity.RESULT_CANCELED)
+        {
+
+
+            editText.setText(empty_holder);
+            new CountDownTimer(5000, 1000) {
+                TextView textView2 = findViewById(R.id.textView4);
+                @Override
+                public void onTick(long millisUntilFinished) {
+                    textView2.setTextColor(Color.RED);
+                    textView2.setText(bad_card);
+                }
+
+                @Override
+                public void onFinish() {
+                    textView2.setTextColor(Color.BLACK);
+                    textView2.setText(pay_prompt);
+                }
+
+            }.start();
+        }
+        else
+        {
+            int i;
+            for(i = 0; i <((CodeDelta5)getApplicationContext()).myGlobalArray.size(); i ++)
+            {
+                if(((CodeDelta5)getApplicationContext()).myGlobalArray.get(i).contains(total_cost_str))
+                {
+                    break;
+                }
+
+            }
+            String arrNumbersOnly = ((CodeDelta5)getApplicationContext()).myGlobalArray.get(i).replaceAll("[^0-9,.]", "");
+            double arrDouble = Double.parseDouble(arrNumbersOnly);
+            String fieldVal = editText.getText().toString();
+            String numberOnly = fieldVal.replaceAll("[^0-9,.-]", "");
+            double fieldValDbl = Double.parseDouble(numberOnly);
+            if(arrDouble == fieldValDbl)
+            {
+                ((CodeDelta5)getApplicationContext()).myGlobalArray.remove(i);
+                finish();
+            }
+            else if(fieldValDbl>arrDouble) {
+                editText.setText(empty_holder);
+                new CountDownTimer(5000, 1000) {
+                    TextView textView2 = findViewById(R.id.textView4);
+
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        textView2.setTextColor(Color.RED);
+                        textView2.setText(over_paid);
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        textView2.setTextColor(Color.BLACK);
+                        textView2.setText(pay_prompt);
+                    }
+
+                }.start();
+            }
+            else if(fieldValDbl<0.00)
+            {
+                editText.setText(empty_holder);
+                new CountDownTimer(5000, 1000) {
+                    TextView textView2 = findViewById(R.id.textView4);
+
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        textView2.setTextColor(Color.RED);
+                        textView2.setText(neg_val);
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        textView2.setTextColor(Color.BLACK);
+                        textView2.setText(pay_prompt);
+                    }
+
+                }.start();
+            }
+            else
+            {
+                String temp = ((CodeDelta5)getApplicationContext()).myGlobalArray.get(i);
+                Double temp_doub = arrDouble - fieldValDbl;
+                int iend = temp.indexOf("$");
+                String newPart1 = temp.substring(0,iend);
+                formatter = NumberFormat.getCurrencyInstance();
+                System.out.println(formatter.format(temp_doub));
+                String mulah = "" + formatter.format(temp_doub);
+                newPart1 = newPart1.concat(mulah);
+                ((CodeDelta5)getApplicationContext()).myGlobalArray.set(i, newPart1);
+                finish();
+            }
+        }
+
+    }
+
 
 
 }
