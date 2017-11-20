@@ -42,7 +42,7 @@ public class payment_cc_entry extends AppCompatActivity {
 
         if(ccnoTest == 0)
         {
-            if(ccmoTest == 0)
+            if(ccmoTest == 0 || ccmo.compareTo("08") == 0)
             {
                 if(ccyearTest == 0)
                 {
