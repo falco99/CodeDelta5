@@ -1,28 +1,45 @@
 package com.example.pc.codedelta;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextSwitcher;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity
+{
+    EditText etUsername,etPassword;
+    TextView tvRegisterLink, tvForgot, tvGuest;
+    String username,password, tempPassword="aaaaaaaaaa";
+    Button bLogin;
+    SQLiteDatabase sqLiteDatabaseObj;
+    Boolean Field;
+    Cursor cursor;
+    SQLiteHelper sqLiteHelper;
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-    final EditText etUsername = findViewById(R.id.etUsername);
-    final EditText etPassword = findViewById(R.id.etPassword);
-    final Button bLogin = findViewById(R.id.bLogin);
-    final TextView tvRegisterLink = findViewById(R.id.tvRegisterLink);
-    final TextView tvForgot = findViewById(R.id.tvForgot);
-    final TextView tvGuest = findViewById(R.id.tvGuest);
+     etUsername = (EditText)findViewById(R.id.etUsername);
+    etPassword = (EditText)findViewById(R.id.etPassword);
+    bLogin = (Button)findViewById(R.id.bLogin);
+    tvRegisterLink = (TextView)findViewById(R.id.tvRegisterLink);
+    tvForgot = (TextView)findViewById(R.id.tvForgot);
+    tvGuest = (TextView)findViewById(R.id.tvGuest);
 
+    sqLiteHelper = new SQLiteHelper(this);
+
+    //register button leads to the register page
     tvRegisterLink.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -31,11 +48,21 @@ public class LoginActivity extends AppCompatActivity {
 
         }
     });
-bLogin.setOnClickListener(new View.OnClickListener() {
+
+    // Login button if pressed
+    bLogin.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
-        Intent profile = new Intent(LoginActivity.this,ProfileActivity.class);
-        LoginActivity.this.startActivity(profile);
+        //First check whether the fields are empty
+        checkField();
+        //Once the field is determined not empty
+
+        LoginFunction();
+
+
+
+        /*Intent profile = new Intent(LoginActivity.this,ProfileActivity.class);
+        LoginActivity.this.startActivity(profile);*/
     }
 });
 tvForgot.setOnClickListener(new View.OnClickListener() {
@@ -54,5 +81,67 @@ tvForgot.setOnClickListener(new View.OnClickListener() {
    });
 
     }
+
+    public void checkField()
+    {
+         username = etUsername.getText().toString();
+         password = etPassword.getText().toString();
+
+        if(TextUtils.isEmpty(username) || TextUtils.isEmpty(password))
+        {
+            Field = false;
+        }
+        else {
+            Field = true;
+        }
     }
+
+    public void LoginFunction()
+    {
+      if(Field)
+      {
+        sqLiteDatabaseObj = sqLiteHelper.getWritableDatabase();
+        cursor = sqLiteDatabaseObj.query(RegisterContract.RegisterEntry.TABLE_NAME,null," "+
+                RegisterContract.RegisterEntry.COLUMN_USERNAME +"=?", new String[]{username},null,null,null);
+
+        while(cursor.moveToNext()){
+            if(cursor.isFirst()){
+                cursor.moveToFirst();
+                tempPassword = cursor.getString(cursor.getColumnIndex(RegisterContract.RegisterEntry.COLUMN_PASSWORD));
+
+                cursor.close();
+            }
+        }
+        checkFinal();
+
+      }else {
+          Toast.makeText(LoginActivity.this,"Please Enter UserName or Password.",Toast.LENGTH_LONG).show();
+      }
+    }
+
+
+public void checkFinal(){
+    if(tempPassword.equalsIgnoreCase(password))
+    {
+
+        Toast.makeText(LoginActivity.this,"Login Successfully",Toast.LENGTH_LONG).show();
+
+        // Going to Dashboard activity after login success message.
+        Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);
+
+
+        startActivity(intent);
+
+
+    }
+    else {
+
+        Toast.makeText(LoginActivity.this,"UserName or Password is Wrong, Please Try Again.",Toast.LENGTH_LONG).show();
+
+    }
+    tempPassword = "NOT_FOUND" ;
+}
+
+
+}
 

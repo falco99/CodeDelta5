@@ -2,9 +2,7 @@ package com.example.pc.codedelta;
 
 import android.content.ContentValues;
 import android.content.Intent;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,42 +12,46 @@ import android.widget.TextView;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    private MySqliteOpenHelper mySqliteOpenHelper;
-    private SQLiteDatabase mDatabase;
-    Table data;
+
+    private SQLiteDatabase mDb;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        final EditText etFname = findViewById(R.id.etFname);
-        final EditText etLname = findViewById(R.id.etLname);
+
+        final SQLiteHelper dbHelper = new SQLiteHelper(this);
+
+        final EditText etNname = findViewById(R.id.etFname);
+
         final EditText etPhone = findViewById(R.id.etPhone);
         final EditText etUsername = findViewById(R.id.etUsername);
         final EditText etPassword = findViewById(R.id.etPassword);
         final EditText etDob = findViewById(R.id.etDob);
         final Button bRegister = findViewById(R.id.bRegister);
 
-        data(etFname, etLname, etPhone, etDob, etUsername, etPassword);
         final TextView tvCancel = findViewById(R.id.tvCancel);
 
-
+ // when the register button is clicked
         bRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mySqliteOpenHelper = new MySqliteOpenHelper(getApplicationContext());
-                mDatabase = mySqliteOpenHelper.getWritableDatabase();
+                if (etNname.getText().length() == 0 || etDob.getText().length() ==0
+                        ||etPhone.getText().length() == 0 || etUsername.getText().length() ==0
+                        ||etPassword.getText().length() == 0)
+                {
+                   // Toast.makeText(this, "You did not enter a username", Toast.LENGTH_SHORT).show();
+                    return;
 
-                ContentValues values = new ContentValues();
-                values.put("Fname", data.getFname());
-                values.put("Lname", data.getLname());
-                values.put("Phone", data.getPhone());
-                values.put("Dob",data.getDob());
-                values.put("Username",data.getUsername());
-                values.put("Password",data.getPassword());
+                }
+
+                mDb = dbHelper.getWritableDatabase();
 
 
-                mDatabase.insert("table_Name", null, values);
+
+                addNewUser(etNname.getText().toString(),etDob.getText().toString(),etPhone.getText().toString(),
+                        etUsername.getText().toString(), etPassword.getText().toString());
 
 
                 Intent Reg = new Intent(RegisterActivity.this, LoginActivity.class);
@@ -78,6 +80,21 @@ public class RegisterActivity extends AppCompatActivity {
 
 
 }
+    private long addNewUser (String name, String Dob, String phone, String username, String password)
+    {
+        ContentValues cv = new ContentValues();
+        cv.put(RegisterContract.RegisterEntry.COLUMN_NAME,name);
+        cv.put(RegisterContract.RegisterEntry.COLUMN_D0B,Dob);
+        cv.put(RegisterContract.RegisterEntry.COLUMN_PHONE,phone);
+        cv.put(RegisterContract.RegisterEntry.COLUMN_USERNAME,username);
+        cv.put(RegisterContract.RegisterEntry.COLUMN_PASSWORD, password);
+        return mDb.insert(RegisterContract.RegisterEntry.TABLE_NAME,null,cv);
+
+
+
+
+
+    }
 
   }
 
