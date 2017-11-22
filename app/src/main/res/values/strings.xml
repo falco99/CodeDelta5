@@ -79,6 +79,9 @@
     <string name="Request">Request an Appointment</string>
     <string name="Send_msg">Send message</string>
     <string name="Rating">Rating</string>
+    <string name="check_app">Check App</string>
+    <string name="personal_tutoring_app">Personal Tutoring App</string>
+    <string name="developers">Developers</string>
     <!---->
     <string-array name="tutors">
         <item>Jon</item>

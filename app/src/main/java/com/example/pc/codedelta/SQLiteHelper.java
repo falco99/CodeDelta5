@@ -10,7 +10,15 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class SQLiteHelper extends SQLiteOpenHelper
 {
-    private static final String DATABASE_NAME ="tutorapp.db";
+    static String DATABASE_NAME ="tutorapp.db";
+    public static final String TABLE_NAME = "people";
+    public static final String TABLE_COL_ID="id";
+    public static final String COLUMN_NAME ="name";
+
+    public static final String COLUMN_PHONE ="PHONE";
+    public static final String COLUMN_D0B = "DOB";
+    public static final String COLUMN_USERNAME = "USERNAME";
+    public static final String COLUMN_PASSWORD = "PASSWORD";
 
     private static final int DATABASE_VERSION = 1;
 
@@ -22,22 +30,21 @@ public class SQLiteHelper extends SQLiteOpenHelper
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase)
     {
-        final String SQL_CREATE_TABLE ="CREATE TABLE " +
-                RegisterContract.RegisterEntry.TABLE_NAME + "(" +
-                RegisterContract.RegisterEntry._ID +"INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                RegisterContract.RegisterEntry.COLUMN_NAME + "TEXT NOT NULL," +
+        String SQL_CREATE_TABLE ="CREATE TABLE " +
+                TABLE_NAME + "(" + TABLE_COL_ID +" INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                COLUMN_NAME + "VARCHAR," +
 
-                RegisterContract.RegisterEntry.COLUMN_D0B + "TEXT NOT NULL," +
-                RegisterContract.RegisterEntry.COLUMN_PHONE +"TEXT NOT NULL," +
-                RegisterContract.RegisterEntry.COLUMN_USERNAME +"TEXT NOT NULL,"+
-                RegisterContract.RegisterEntry.COLUMN_PASSWORD + "TEXT NOT NULL" +");";
+                COLUMN_D0B + "VARCHAR," +
+                COLUMN_PHONE +"VARCHAR," +
+                COLUMN_USERNAME +"VARCHAR,"+
+                COLUMN_PASSWORD + "VARCHAR" +");";
 
      sqLiteDatabase.execSQL(SQL_CREATE_TABLE);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
-        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + RegisterContract.RegisterEntry.TABLE_NAME);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(sqLiteDatabase);
     }
 }

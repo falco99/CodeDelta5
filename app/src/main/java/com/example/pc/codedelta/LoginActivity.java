@@ -16,7 +16,7 @@ public class LoginActivity extends AppCompatActivity
 {
     EditText etUsername,etPassword;
     TextView tvRegisterLink, tvForgot, tvGuest;
-    String username,password, tempPassword="aaaaaaaaaa";
+    String username,password = "bbb", tempPassword="aaaaaaaaaa";
     Button bLogin;
     SQLiteDatabase sqLiteDatabaseObj;
     Boolean Field;
@@ -61,6 +61,7 @@ public class LoginActivity extends AppCompatActivity
 
 
 
+
         /*Intent profile = new Intent(LoginActivity.this,ProfileActivity.class);
         LoginActivity.this.startActivity(profile);*/
     }
@@ -101,18 +102,18 @@ tvForgot.setOnClickListener(new View.OnClickListener() {
       if(Field)
       {
         sqLiteDatabaseObj = sqLiteHelper.getWritableDatabase();
-        cursor = sqLiteDatabaseObj.query(RegisterContract.RegisterEntry.TABLE_NAME,null," "+
-                RegisterContract.RegisterEntry.COLUMN_USERNAME +"=?", new String[]{username},null,null,null);
+        cursor = sqLiteDatabaseObj.query(SQLiteHelper.TABLE_NAME,null," "+
+                SQLiteHelper.COLUMN_USERNAME +"=?", new String[]{username},null,null,null);
 
         while(cursor.moveToNext()){
             if(cursor.isFirst()){
                 cursor.moveToFirst();
-                tempPassword = cursor.getString(cursor.getColumnIndex(RegisterContract.RegisterEntry.COLUMN_PASSWORD));
+                tempPassword = cursor.getString(cursor.getColumnIndex(SQLiteHelper.COLUMN_PASSWORD));
 
                 cursor.close();
             }
         }
-        checkFinal();
+        CheckFinal();
 
       }else {
           Toast.makeText(LoginActivity.this,"Please Enter UserName or Password.",Toast.LENGTH_LONG).show();
@@ -120,13 +121,13 @@ tvForgot.setOnClickListener(new View.OnClickListener() {
     }
 
 
-public void checkFinal(){
+public void CheckFinal(){
     if(tempPassword.equalsIgnoreCase(password))
     {
 
         Toast.makeText(LoginActivity.this,"Login Successfully",Toast.LENGTH_LONG).show();
 
-        // Going to Dashboard activity after login success message.
+
         Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);
 
 

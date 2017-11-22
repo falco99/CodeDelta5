@@ -9,11 +9,20 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+import android.content.Context;
+import android.database.Cursor;
 
 public class RegisterActivity extends AppCompatActivity {
 
-
-    private SQLiteDatabase mDb;
+    EditText etName, etPhone,etUsername,etPassword,etDob;
+    SQLiteDatabase sqLiteDatabaseObj;
+    String username,password,name,dob,phone,Result = "Found";
+    Button bRegister;
+    Boolean Field;
+    SQLiteHelper sqLiteHelper;
+    Cursor cursor;
+    String SQLiteDataBaseQueryHolder;
 
 
     @Override
@@ -21,41 +30,37 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        final SQLiteHelper dbHelper = new SQLiteHelper(this);
+        SQLiteHelper sqLiteHelper = new SQLiteHelper(this);
 
-        final EditText etNname = findViewById(R.id.etFname);
+        etName = findViewById(R.id.etFname);
 
-        final EditText etPhone = findViewById(R.id.etPhone);
-        final EditText etUsername = findViewById(R.id.etUsername);
-        final EditText etPassword = findViewById(R.id.etPassword);
-        final EditText etDob = findViewById(R.id.etDob);
-        final Button bRegister = findViewById(R.id.bRegister);
+        etPhone = findViewById(R.id.etPhone);
+        etUsername = findViewById(R.id.etUsername);
+        etPassword = findViewById(R.id.etPassword);
+        etDob = findViewById(R.id.etDob);
+        bRegister = findViewById(R.id.bRegister);
 
         final TextView tvCancel = findViewById(R.id.tvCancel);
 
  // when the register button is clicked
         bRegister.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                if (etNname.getText().length() == 0 || etDob.getText().length() ==0
-                        ||etPhone.getText().length() == 0 || etUsername.getText().length() ==0
-                        ||etPassword.getText().length() == 0)
-                {
-                   // Toast.makeText(this, "You did not enter a username", Toast.LENGTH_SHORT).show();
-                    return;
+            public void onClick(View view) {
 
-                }
+                SQLiteDatabaseBuild();
 
-                mDb = dbHelper.getWritableDatabase();
+                SQLiteTableBuild();
 
+                CheckField();
 
+                Checkingusername();
+                EmptyField();
 
-                addNewUser(etNname.getText().toString(),etDob.getText().toString(),etPhone.getText().toString(),
+                /*addNewUser(etName.getText().toString(),etDob.getText().toString(),etPhone.getText().toString(),
                         etUsername.getText().toString(), etPassword.getText().toString());
+                    */
 
 
-                Intent Reg = new Intent(RegisterActivity.this, LoginActivity.class);
-                RegisterActivity.this.startActivity(Reg);
 
             }
         });
@@ -68,33 +73,106 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
-    private void data(EditText etFname, EditText etLname, EditText etPhone, EditText etDob, EditText etUsername, EditText etPassword) {
 
-        String Fname = etFname.getText().toString();
-        String Lname = etLname.getText().toString();
-        String Dob   = etDob.getText().toString() ;
-        String Phone = etPhone.getText().toString() ;
-        String username =etUsername.getText().toString() ;
-        String password = etPassword.getText().toString();
+    public void SQLiteDatabaseBuild(){
 
-
-
-}
-    private long addNewUser (String name, String Dob, String phone, String username, String password)
-    {
-        ContentValues cv = new ContentValues();
-        cv.put(RegisterContract.RegisterEntry.COLUMN_NAME,name);
-        cv.put(RegisterContract.RegisterEntry.COLUMN_D0B,Dob);
-        cv.put(RegisterContract.RegisterEntry.COLUMN_PHONE,phone);
-        cv.put(RegisterContract.RegisterEntry.COLUMN_USERNAME,username);
-        cv.put(RegisterContract.RegisterEntry.COLUMN_PASSWORD, password);
-        return mDb.insert(RegisterContract.RegisterEntry.TABLE_NAME,null,cv);
-
-
-
-
+        sqLiteDatabaseObj = openOrCreateDatabase(sqLiteHelper.DATABASE_NAME, Context.MODE_PRIVATE, null);
 
     }
+    public void SQLiteTableBuild(){
+        sqLiteDatabaseObj.execSQL("CREATE TABLE IF NOT EXISTS " + sqLiteHelper.TABLE_NAME
+                + "(" + SQLiteHelper.TABLE_COL_ID +
+                " PRIMARY KEY AUTOINCREMENT NOT NULL, " + sqLiteHelper.COLUMN_NAME + " VARCHAR, " +
+                sqLiteHelper.COLUMN_PHONE + " VARCHAR, " + sqLiteHelper.COLUMN_D0B + " VARCHAR," +
+                sqLiteHelper.COLUMN_USERNAME + "VARCHAR," + sqLiteHelper.COLUMN_PASSWORD + "VARCHAR);");
+    }
+    public void CheckField(){
+
+        if (etName.getText().length() == 0 || etDob.getText().length() ==0
+                ||etPhone.getText().length() == 0 || etUsername.getText().length() ==0
+                ||etPassword.getText().length() == 0)
+        {
+            Field = false;
+        }else{
+            Field = true;
+        }
+    }
+    public void Checkingusername(){
+
+        username = etUsername.getText().toString();
+        password = etPassword.getText().toString();
+        dob = etDob.getText().toString();
+        phone = etPhone.getText().toString();
+        sqLiteDatabaseObj = sqLiteHelper.getWritableDatabase();
+        cursor = sqLiteDatabaseObj.query(SQLiteHelper.TABLE_NAME,null," "+
+                SQLiteHelper.COLUMN_USERNAME +"=?", new String[]{username},null,null,null);
+
+        while(cursor.moveToNext()){
+            if(cursor.isFirst()){
+                cursor.moveToFirst();
+                Result = "Found";
+
+                cursor.close();
+            }
+        }
+        CheckFinal();
+    }
+
+    public void CheckFinal()
+    {
+        if(Result.equalsIgnoreCase("Found"))
+        {
+
+            // If username already exists then toast msg will display.
+            Toast.makeText(RegisterActivity.this,"username Already Exists",Toast.LENGTH_LONG).show();
+
+        }
+        else {
+
+            // If username doesn't exist then user registration details will entered to SQLite database.
+            InsertDataInDatabase();
+
+        }
+
+        Result = "Not_Found" ;
+
+    }
+    public void InsertDataInDatabase(){
+        if (Field )
+        {
+            SQLiteDataBaseQueryHolder = "INSERT INTO "+ SQLiteHelper.TABLE_NAME+" " +
+                    "(Name,Phone,Dob,username,password) VALUES('"+name+"', '"+phone+"','"+dob+"','"+username+"', '"+password+"');";
+
+
+            sqLiteDatabaseObj.execSQL(SQLiteDataBaseQueryHolder);
+
+
+            sqLiteDatabaseObj.close();
+
+            // Printing toast message after done inserting.
+            Toast.makeText(RegisterActivity.this,"User Registered Successfully", Toast.LENGTH_LONG).show();
+        } else{
+            Toast.makeText(RegisterActivity.this,"All the fields are required", Toast.LENGTH_LONG).show();
+        }
+    }
+    public void EmptyField(){
+
+        etName.getText().clear();
+
+        etDob.getText().clear();
+
+        etPhone.getText().clear();
+        etUsername.getText().clear();
+        etPassword.getText().clear();
+        //Going back to Login Page
+        Intent Reg = new Intent(RegisterActivity.this, LoginActivity.class);
+        RegisterActivity.this.startActivity(Reg);
+
+    }
+
+
+
+
 
   }
 
