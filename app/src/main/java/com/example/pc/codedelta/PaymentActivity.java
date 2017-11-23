@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Adapter;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -15,12 +16,21 @@ import static android.R.id.message;
 
 
 public class PaymentActivity extends AppCompatActivity {
-
+     Button bFinish;
     public static final String EXTRA_MESSAGE = "com.example.pc.codedelta.MESSAGE";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
+        bFinish = findViewById(R.id.bFinish);
+
+        bFinish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent finish = new Intent(PaymentActivity.this,ProfileActivity.class);
+                PaymentActivity.this.startActivity(finish);
+            }
+        });
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, ((CodeDelta5)getApplicationContext()).myGlobalArray);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         Spinner spinner =  findViewById(R.id.spinner);

@@ -30,7 +30,7 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        SQLiteHelper sqLiteHelper = new SQLiteHelper(this);
+        sqLiteHelper = new SQLiteHelper(this);
 
         etName = findViewById(R.id.etFname);
 
@@ -53,7 +53,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                 CheckField();
 
-                Checkingusername();
+             //   Checkingusername();
                 EmptyField();
 
                 /*addNewUser(etName.getText().toString(),etDob.getText().toString(),etPhone.getText().toString(),
@@ -81,7 +81,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
     public void SQLiteTableBuild(){
         sqLiteDatabaseObj.execSQL("CREATE TABLE IF NOT EXISTS " + sqLiteHelper.TABLE_NAME
-                + "(" + SQLiteHelper.TABLE_COL_ID +
+                + "(" + sqLiteHelper.TABLE_COL_ID +
                 " PRIMARY KEY AUTOINCREMENT NOT NULL, " + sqLiteHelper.COLUMN_NAME + " VARCHAR, " +
                 sqLiteHelper.COLUMN_PHONE + " VARCHAR, " + sqLiteHelper.COLUMN_D0B + " VARCHAR," +
                 sqLiteHelper.COLUMN_USERNAME + "VARCHAR," + sqLiteHelper.COLUMN_PASSWORD + "VARCHAR);");
@@ -104,8 +104,8 @@ public class RegisterActivity extends AppCompatActivity {
         dob = etDob.getText().toString();
         phone = etPhone.getText().toString();
         sqLiteDatabaseObj = sqLiteHelper.getWritableDatabase();
-        cursor = sqLiteDatabaseObj.query(SQLiteHelper.TABLE_NAME,null," "+
-                SQLiteHelper.COLUMN_USERNAME +"=?", new String[]{username},null,null,null);
+        cursor = sqLiteDatabaseObj.query(sqLiteHelper.TABLE_NAME,null," "+
+                sqLiteHelper.COLUMN_USERNAME +"=?", new String[]{username},null,null,null);
 
         while(cursor.moveToNext()){
             if(cursor.isFirst()){
@@ -140,7 +140,7 @@ public class RegisterActivity extends AppCompatActivity {
     public void InsertDataInDatabase(){
         if (Field )
         {
-            SQLiteDataBaseQueryHolder = "INSERT INTO "+ SQLiteHelper.TABLE_NAME+" " +
+            SQLiteDataBaseQueryHolder = "INSERT INTO "+ sqLiteHelper.TABLE_NAME+" " +
                     "(Name,Phone,Dob,username,password) VALUES('"+name+"', '"+phone+"','"+dob+"','"+username+"', '"+password+"');";
 
 

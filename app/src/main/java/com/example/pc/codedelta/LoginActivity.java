@@ -57,9 +57,9 @@ public class LoginActivity extends AppCompatActivity
         checkField();
         //Once the field is determined not empty
 
-        LoginFunction();
+        //LoginFunction();
 
-
+CheckFinal();
 
 
         /*Intent profile = new Intent(LoginActivity.this,ProfileActivity.class);
@@ -102,8 +102,8 @@ tvForgot.setOnClickListener(new View.OnClickListener() {
       if(Field)
       {
         sqLiteDatabaseObj = sqLiteHelper.getWritableDatabase();
-        cursor = sqLiteDatabaseObj.query(SQLiteHelper.TABLE_NAME,null," "+
-                SQLiteHelper.COLUMN_USERNAME +"=?", new String[]{username},null,null,null);
+        cursor = sqLiteDatabaseObj.query(sqLiteHelper.TABLE_NAME,null," "+
+                sqLiteHelper.COLUMN_USERNAME +"=?", new String[]{username},null,null,null);
 
         while(cursor.moveToNext()){
             if(cursor.isFirst()){
@@ -136,6 +136,7 @@ public void CheckFinal(){
 
     }
     else {
+
 
         Toast.makeText(LoginActivity.this,"UserName or Password is Wrong, Please Try Again.",Toast.LENGTH_LONG).show();
 
