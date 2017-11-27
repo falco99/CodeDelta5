@@ -41,7 +41,7 @@ public class AppointmentsTestActivity extends AppCompatActivity {
 
 
             public void onClick (View v) {
-                Intent register = new Intent(AppointmentsTestActivity.this, TutorList.class);
+                Intent register = new Intent(AppointmentsTestActivity.this, TutoringCategories.class);
                 AppointmentsTestActivity.this.startActivity(register);
             }
 
