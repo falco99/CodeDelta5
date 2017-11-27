@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/ConstraintLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/sleek">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -29,7 +30,8 @@
         android:layout_marginTop="228dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        >
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
@@ -42,7 +44,8 @@
                 android:layout_marginEnd="152dp"
                 android:text="LastName"
                 app:layout_constraintBaseline_toBaselineOf="@+id/textView9"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textColor="#ffffff"/>
 
             <TextView
                 android:id="@+id/textView9"
