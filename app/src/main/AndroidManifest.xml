@@ -55,7 +55,8 @@
         <activity
             android:name=".AppointmentsTestActivity"
             android:exported="true" />
-        <activity android:name=".Appointment_Request_Activity"></activity>
+        <activity android:name=".Appointment_Request_Activity"
+            android:exported="true"></activity>
     </application>
 
 </manifest>
