@@ -61,7 +61,8 @@
         android:layout_marginRight="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="16dp"
-        app:layout_constraintVertical_bias="0.171" />
+        app:layout_constraintVertical_bias="0.171"
+        android:textColor="ffffff"/>
 
     <Button
         android:id="@+id/bFinish"

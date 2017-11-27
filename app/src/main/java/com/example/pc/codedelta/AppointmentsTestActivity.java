@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class AppointmentsTestActivity extends AppCompatActivity {
-    Button bt1,bt2;
+    Button bt1,bt2,bt3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -15,6 +15,7 @@ public class AppointmentsTestActivity extends AppCompatActivity {
 
         bt1 = (Button) findViewById(R.id.current_app);
         bt2 = (Button) findViewById(R.id.clndr);
+        bt3 = (Button) findViewById(R.id.Add_app);
 
 
                 bt1.setOnClickListener(new View.OnClickListener() {
@@ -35,6 +36,16 @@ public class AppointmentsTestActivity extends AppCompatActivity {
                         }
 
                     });
+        bt3.setOnClickListener(new View.OnClickListener(){
+
+
+
+            public void onClick (View v) {
+                Intent register = new Intent(AppointmentsTestActivity.this, TutorList.class);
+                AppointmentsTestActivity.this.startActivity(register);
+            }
+
+        });
 
 
 
