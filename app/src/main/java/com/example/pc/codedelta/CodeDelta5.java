@@ -14,9 +14,7 @@ public class CodeDelta5 extends Application {
     public String security_No;
     public String ccMonth;
     public String ccYear;
-    public String[] names;
-    public int[] images;
-    public String[] dates;
+
 
 
 
@@ -31,9 +29,7 @@ public class CodeDelta5 extends Application {
         security_No = "302";
         ccMonth = "8";
         ccYear = "17";
-        images = new int[]{R.drawable.chrisprofile, R.drawable.trevorcartoonprofile, R.drawable.shelly, R.drawable.chrisprofile};
-        names = new String[]{"Chris", "Trevor", "Shelly", "Chris"};
-        dates = new String[]{"Monday 12:00pm Arlington", "Tuesday 12:00pm Arlington", "Wednesday 12:00pm Arlington", "Thursday 12:00pm Arlington"};
+
 
     }
 }

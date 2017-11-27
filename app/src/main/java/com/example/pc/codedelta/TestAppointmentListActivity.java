@@ -60,6 +60,7 @@ public class TestAppointmentListActivity extends AppCompatActivity {
                 TextView mNameView = view.findViewById(R.id.Name);
                 TextView mDateView = view.findViewById(R.id.Date);
 
+
                 mImageView.setImageResource(images[position]);
                 mNameView.setText(names[position]);
                 mDateView.setText(dates[position]);

@@ -42,9 +42,6 @@
             android:name=".TutoringCategories"
             android:exported="true" />
         <activity
-            android:name=".CalendarActivity"
-            android:exported="true" />
-        <activity
             android:name=".TutorList"
             android:exported="true" />
         <activity
