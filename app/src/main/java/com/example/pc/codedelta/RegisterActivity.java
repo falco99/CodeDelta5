@@ -32,7 +32,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         sqLiteHelper = new SQLiteHelper(this);
 
-        etName = findViewById(R.id.etFname);
+        etName = findViewById(R.id.etName);
 
         etPhone = findViewById(R.id.etPhone);
         etUsername = findViewById(R.id.etUsername);
@@ -53,7 +53,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                 CheckField();
 
-             //   Checkingusername();
+               Checkingusername();
                 EmptyField();
 
                 /*addNewUser(etName.getText().toString(),etDob.getText().toString(),etPhone.getText().toString(),
@@ -82,9 +82,9 @@ public class RegisterActivity extends AppCompatActivity {
     public void SQLiteTableBuild(){
         sqLiteDatabaseObj.execSQL("CREATE TABLE IF NOT EXISTS " + sqLiteHelper.TABLE_NAME
                 + "(" + sqLiteHelper.TABLE_COL_ID +
-                " PRIMARY KEY AUTOINCREMENT NOT NULL, " + sqLiteHelper.COLUMN_NAME + " VARCHAR, " +
+                " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " + sqLiteHelper.COLUMN_NAME + " VARCHAR, " +
                 sqLiteHelper.COLUMN_PHONE + " VARCHAR, " + sqLiteHelper.COLUMN_D0B + " VARCHAR," +
-                sqLiteHelper.COLUMN_USERNAME + "VARCHAR," + sqLiteHelper.COLUMN_PASSWORD + "VARCHAR);");
+                sqLiteHelper.COLUMN_USERNAME + " VARCHAR," + sqLiteHelper.COLUMN_PASSWORD + " VARCHAR);");
     }
     public void CheckField(){
 
@@ -120,19 +120,19 @@ public class RegisterActivity extends AppCompatActivity {
 
     public void CheckFinal()
     {
-        if(Result.equalsIgnoreCase("Found"))
+      /*  if(Result.equalsIgnoreCase("Found"))
         {
 
             // If username already exists then toast msg will display.
             Toast.makeText(RegisterActivity.this,"username Already Exists",Toast.LENGTH_LONG).show();
 
         }
-        else {
+        else {*/
 
             // If username doesn't exist then user registration details will entered to SQLite database.
             InsertDataInDatabase();
 
-        }
+       // }
 
         Result = "Not_Found" ;
 

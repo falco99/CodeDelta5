@@ -20,7 +20,7 @@ public class ProfileActivity extends AppCompatActivity {
         tvRequest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent app1 = new Intent(ProfileActivity.this,TestAppointmentListActivity.class);
+                Intent app1 = new Intent(ProfileActivity.this,AppointmentsTestActivity.class);
                 ProfileActivity.this.startActivity(app1);
             }
         });

@@ -57,9 +57,9 @@ public class LoginActivity extends AppCompatActivity
         checkField();
         //Once the field is determined not empty
 
-        //LoginFunction();
+        LoginFunction();
 
-CheckFinal();
+
 
 
         /*Intent profile = new Intent(LoginActivity.this,ProfileActivity.class);
@@ -138,7 +138,7 @@ public void CheckFinal(){
     else {
 
 
-        Toast.makeText(LoginActivity.this,"UserName or Password is Wrong, Please Try Again.",Toast.LENGTH_LONG).show();
+        Toast.makeText(LoginActivity.this,"UserName or Password is Incorrect, Please Try Again.",Toast.LENGTH_LONG).show();
 
     }
     tempPassword = "NOT_FOUND" ;
