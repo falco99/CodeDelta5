@@ -48,7 +48,6 @@ public class PaymentActivity extends AppCompatActivity {
         spinner.setAdapter(null);
         spinner.setAdapter(adapter);
 
-
     }
 
 
