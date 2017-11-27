@@ -19,7 +19,7 @@ public class LoginActivity extends AppCompatActivity
     String username,password = "bbb", tempPassword="aaaaaaaaaa";
     Button bLogin;
     SQLiteDatabase sqLiteDatabaseObj;
-    Boolean Field;
+    Boolean Field, Pass;
     Cursor cursor;
     SQLiteHelper sqLiteHelper;
 
@@ -30,67 +30,67 @@ public class LoginActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-     etUsername = (EditText)findViewById(R.id.etUsername);
-    etPassword = (EditText)findViewById(R.id.etPassword);
-    bLogin = (Button)findViewById(R.id.bLogin);
-    tvRegisterLink = (TextView)findViewById(R.id.tvRegisterLink);
-    tvForgot = (TextView)findViewById(R.id.tvForgot);
-    tvGuest = (TextView)findViewById(R.id.tvGuest);
+        etUsername = (EditText)findViewById(R.id.etUsername);
+        etPassword = (EditText)findViewById(R.id.etPassword);
+        bLogin = (Button)findViewById(R.id.bLogin);
+        tvRegisterLink = (TextView)findViewById(R.id.tvRegisterLink);
+        tvForgot = (TextView)findViewById(R.id.tvForgot);
+        tvGuest = (TextView)findViewById(R.id.tvGuest);
 
-    sqLiteHelper = new SQLiteHelper(this);
+        sqLiteHelper = new SQLiteHelper(this);
 
-    //register button leads to the register page
-    tvRegisterLink.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            Intent register = new Intent(LoginActivity.this,RegisterActivity.class);
-            LoginActivity.this.startActivity(register);
+        //register button leads to the register page
+        tvRegisterLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent register = new Intent(LoginActivity.this,RegisterActivity.class);
+                LoginActivity.this.startActivity(register);
 
-        }
-    });
+            }
+        });
 
-    // Login button if pressed
-    bLogin.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-        //First check whether the fields are empty
-        checkField();
-        //Once the field is determined not empty
+        // Login button if pressed
+        bLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //First check whether the fields are empty
+                checkField();
+                //Once the field is determined not empty
 
-        //LoginFunction();
+                LoginFunction();
 
-CheckFinal();
+                CheckFinal();
 
 
         /*Intent profile = new Intent(LoginActivity.this,ProfileActivity.class);
         LoginActivity.this.startActivity(profile);*/
-    }
-});
-tvForgot.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-        Intent forgotten = new Intent(LoginActivity.this,PasswordResetActivity.class);
-        LoginActivity.this.startActivity(forgotten);
-    }
-});
-   tvGuest.setOnClickListener(new View.OnClickListener() {
-       @Override
-       public void onClick(View v) {
-           Intent guest = new Intent(LoginActivity.this,TutoringCategories.class);
-           LoginActivity.this.startActivity(guest);
-       }
-   });
+            }
+        });
+        tvForgot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent forgotten = new Intent(LoginActivity.this,PasswordResetActivity.class);
+                LoginActivity.this.startActivity(forgotten);
+            }
+        });
+        tvGuest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent guest = new Intent(LoginActivity.this,TutoringCategories.class);
+                LoginActivity.this.startActivity(guest);
+            }
+        });
 
     }
 
     public void checkField()
     {
-         username = etUsername.getText().toString();
-         password = etPassword.getText().toString();
+        username = etUsername.getText().toString();
+        password = etPassword.getText().toString();
 
         if(TextUtils.isEmpty(username) || TextUtils.isEmpty(password))
         {
-            Field = false;
+            Field = false ;
         }
         else {
             Field = true;
@@ -99,8 +99,8 @@ tvForgot.setOnClickListener(new View.OnClickListener() {
 
     public void LoginFunction()
     {
-      if(Field)
-      {
+        if(Field)
+        {
         sqLiteDatabaseObj = sqLiteHelper.getWritableDatabase();
         cursor = sqLiteDatabaseObj.query(sqLiteHelper.TABLE_NAME,null," "+
                 sqLiteHelper.COLUMN_USERNAME +"=?", new String[]{username},null,null,null);
@@ -112,38 +112,47 @@ tvForgot.setOnClickListener(new View.OnClickListener() {
 
                 cursor.close();
             }
+            Pass = true;
         }
-        CheckFinal();
 
-      }else {
-          Toast.makeText(LoginActivity.this,"Please Enter UserName or Password.",Toast.LENGTH_LONG).show();
-      }
+           /* if (username.equals("chris") && password.equals("chris123")||
+                    username.equals("admin")&& password.equals("1234")||
+                    username.equals("user")&& password.equals("1234")) {
+                Pass = true;
+
+            }
+            else{
+                Pass = false;
+            }
+            */
+            CheckFinal();
+
+        }else {
+            Toast.makeText(LoginActivity.this,"Please Enter UserName or Password.",Toast.LENGTH_LONG).show();
+        }
     }
 
 
-public void CheckFinal(){
-    if(tempPassword.equalsIgnoreCase(password))
-    {
+    public void CheckFinal() {
+            if (tempPassword.equalsIgnoreCase(password)) {
 
-        Toast.makeText(LoginActivity.this,"Login Successfully",Toast.LENGTH_LONG).show();
-
-
-        Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);
+                Toast.makeText(LoginActivity.this, "Login Successfully", Toast.LENGTH_LONG).show();
 
 
-        startActivity(intent);
+                Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);
 
 
+                startActivity(intent);
+
+
+            } else {
+
+
+                Toast.makeText(LoginActivity.this, "UserName or Password is Incorrect, Please Try Again.", Toast.LENGTH_LONG).show();
+
+            }
+            tempPassword = "NOT_FOUND";
+        }
     }
-    else {
 
-
-        Toast.makeText(LoginActivity.this,"UserName or Password is Wrong, Please Try Again.",Toast.LENGTH_LONG).show();
-
-    }
-    tempPassword = "NOT_FOUND" ;
-}
-
-
-}
 
