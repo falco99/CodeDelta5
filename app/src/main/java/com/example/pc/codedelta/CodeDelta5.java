@@ -20,13 +20,12 @@ public class CodeDelta5 extends Application {
 
 
 
-
     public CodeDelta5() {
         myGlobalArray = new ArrayList<>();
         {
-            myGlobalArray.add("Bobby Gerbil $28.15");
-            myGlobalArray.add("Steven Spielberg $15.30");
-            myGlobalArray.add("John Johnson $105.50");
+            myGlobalArray.add("Chris $28.15");
+            myGlobalArray.add("Trevor $15.30");
+            myGlobalArray.add("Shelly $105.50");
         }
         ccNumber = 	"4012888888881881";
         security_No = "302";
@@ -35,8 +34,6 @@ public class CodeDelta5 extends Application {
         images = new int[]{R.drawable.chrisprofile, R.drawable.trevorcartoonprofile, R.drawable.shelly, R.drawable.chrisprofile};
         names = new String[]{"Chris", "Trevor", "Shelly", "Chris"};
         dates = new String[]{"Monday 12:00pm Arlington", "Tuesday 12:00pm Arlington", "Wednesday 12:00pm Arlington", "Thursday 12:00pm Arlington"};
-
-
 
     }
 }
