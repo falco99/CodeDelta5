@@ -66,13 +66,13 @@ public class LoginActivity extends AppCompatActivity
         LoginActivity.this.startActivity(profile);*/
     }
 });
-tvForgot.setOnClickListener(new View.OnClickListener() {
+/*tvForgot.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
         Intent forgotten = new Intent(LoginActivity.this,PasswordResetActivity.class);
         LoginActivity.this.startActivity(forgotten);
     }
-});
+}); */
    tvGuest.setOnClickListener(new View.OnClickListener() {
        @Override
        public void onClick(View v) {
@@ -125,7 +125,7 @@ public void CheckFinal(){
     if(tempPassword.equalsIgnoreCase(password))
     {
 
-        Toast.makeText(LoginActivity.this,"Login Successfully",Toast.LENGTH_LONG).show();
+        Toast.makeText(LoginActivity.this,"Login Successfully! ",Toast.LENGTH_LONG).show();
 
 
         Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);

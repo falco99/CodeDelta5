@@ -12,6 +12,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import android.widget.AdapterView;
+import android.content.Intent;
 
 public class TutorList extends AppCompatActivity {
     private static final String TAG = "Tutorlist";
@@ -31,6 +33,19 @@ public class TutorList extends AppCompatActivity {
         CustomAdapter customAdapter = new CustomAdapter();
 
         list.setAdapter(customAdapter);
+
+        // testing on click listener
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> listView, View view, int position, long id) {
+                Intent intent = new Intent(TutorList.this, searchedTutorProfile.class);
+               // TextView temp = list.findViewById(R.id.tutorFName);
+               // String tempFName = (String)temp.getText();
+                intent.putExtra("name", names[position]);
+                intent.putExtra("last", dates[position]);
+                startActivity(intent);
+            }
+        });
 
     }
 
@@ -66,6 +81,7 @@ public class TutorList extends AppCompatActivity {
             return view;
         }
     }
+
 
 
 

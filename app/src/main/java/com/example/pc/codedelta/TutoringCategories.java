@@ -36,9 +36,9 @@ public class TutoringCategories extends AppCompatActivity {
 
         // Code for Spinner 1
         ArrayAdapter<String> myAdapter1 = new ArrayAdapter<String>(TutoringCategories.this,
-                android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.location));
+                android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.location)); // change to global array
 
-        myAdapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        myAdapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // ((CodeDelta5)getApplicationContext()).myGlobalArray)
         mySpinner1.setAdapter(myAdapter1);
 
         // Code for Spinner 2
