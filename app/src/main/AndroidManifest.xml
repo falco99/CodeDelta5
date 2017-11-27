@@ -42,7 +42,7 @@
             android:name=".TutoringCategories"
             android:exported="true" />
         <activity
-            android:name=".CalendarActivity"
+            android:name=".TestCalendarActivity"
             android:exported="true" />
         <activity
             android:name=".TutorList"
@@ -50,9 +50,7 @@
         <activity
             android:name=".searchedTutorProfile"
             android:exported="true" />
-        <activity
-            android:name=".TestCalendarActivity"
-            android:exported="true" />
+
         <activity
             android:name=".TestAppointmentListActivity"
 
