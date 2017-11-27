@@ -19,9 +19,9 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:hint="             username"
-        android:textColorHint="#ffffff"
+        android:inputType="text"
         android:textColor="#ffffff"
-        android:inputType="text" />
+        android:textColorHint="#ffffff" />
 
     <TextView
         android:layout_width="wrap_content"

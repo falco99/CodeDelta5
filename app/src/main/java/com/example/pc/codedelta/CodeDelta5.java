@@ -15,6 +15,9 @@ public class CodeDelta5 extends Application {
     public String ccMonth;
     public String ccYear;
 
+
+
+
     public CodeDelta5() {
         myGlobalArray = new ArrayList<>();
         {
@@ -26,6 +29,7 @@ public class CodeDelta5 extends Application {
         security_No = "302";
         ccMonth = "8";
         ccYear = "17";
+
 
     }
 }
