@@ -16,6 +16,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         final Button bLogout = findViewById(R.id.bLogout);
         final TextView tvRequest =findViewById(R.id.tvRequest);
+        final TextView tvPayment = findViewById(R.id.tvPayment);
 
         tvRequest.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -29,6 +30,14 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent logout = new Intent(ProfileActivity.this,LoginActivity.class);
+                ProfileActivity.this.startActivity(logout);
+            }
+        });
+
+        tvPayment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent logout = new Intent(ProfileActivity.this,PaymentActivity.class);
                 ProfileActivity.this.startActivity(logout);
             }
         });
