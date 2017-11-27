@@ -10,7 +10,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class SQLiteHelper extends SQLiteOpenHelper
 {
-    static String DATABASE_NAME ="tutorapp.db";
+    static String DATABASE_NAME ="tutor2.db";
     public static final String TABLE_NAME = "people";
     public static final String TABLE_COL_ID="id";
     public static final String COLUMN_NAME ="name";
@@ -22,24 +22,24 @@ public class SQLiteHelper extends SQLiteOpenHelper
 
     private static final int DATABASE_VERSION = 1;
 
-    public SQLiteHelper(Context context){
-        super(context,DATABASE_NAME,null,DATABASE_VERSION);
+   public SQLiteHelper(Context context){
+       super(context,DATABASE_NAME,null,DATABASE_VERSION);
 
-    }
+   }
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase)
     {
-        String SQL_CREATE_TABLE ="CREATE TABLE " +
-                TABLE_NAME + "(" + TABLE_COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                COLUMN_NAME + " VARCHAR, " +
+        String SQL_CREATE_TABLE ="CREATE TABLE IF NOT EXISTS " +
+                TABLE_NAME + "(" + TABLE_COL_ID +" INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                COLUMN_NAME + " VARCHAR," +
 
-                COLUMN_D0B + " VARCHAR, " +
-                COLUMN_PHONE + " VARCHAR, " +
-                COLUMN_USERNAME + " VARCHAR, "+
-                COLUMN_PASSWORD + " VARCHAR)";
+                COLUMN_D0B + " VARCHAR," +
+                COLUMN_PHONE +" VARCHAR," +
+                COLUMN_USERNAME +" VARCHAR,"+
+                COLUMN_PASSWORD + " VARCHAR" +");";
 
-        sqLiteDatabase.execSQL(SQL_CREATE_TABLE);
+     sqLiteDatabase.execSQL(SQL_CREATE_TABLE);
     }
 
     @Override
@@ -48,5 +48,3 @@ public class SQLiteHelper extends SQLiteOpenHelper
         onCreate(sqLiteDatabase);
     }
 }
-
-
