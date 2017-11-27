@@ -17,7 +17,7 @@ public class AppointmentsTestActivity extends AppCompatActivity {
         bt2 = (Button) findViewById(R.id.clndr);
         bt3 = (Button) findViewById(R.id.Add_app);
 
-//erer
+//erer22
                 bt1.setOnClickListener(new View.OnClickListener() {
 
                     public void onClick(View v) {
