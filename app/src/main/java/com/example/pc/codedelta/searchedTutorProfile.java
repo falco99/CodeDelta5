@@ -9,6 +9,7 @@ public class searchedTutorProfile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_searched_tutor_profile);
+
     }
 
 }
