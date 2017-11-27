@@ -39,7 +39,6 @@ public class TutorList extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> listView, View view, int position, long id) {
                 Intent intent = new Intent(TutorList.this, searchedTutorProfile.class);
-                ;
                 startActivity(intent);
             }
         });
