@@ -24,13 +24,15 @@ public class PaymentActivity extends AppCompatActivity {
         setContentView(R.layout.activity_payment);
         bFinish = findViewById(R.id.bFinish);
 
-        bFinish.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent finish = new Intent(PaymentActivity.this,ProfileActivity.class);
-                PaymentActivity.this.startActivity(finish);
-            }
-        });
+        bFinish.setOnClickListener(
+                new View.OnClickListener() {
+                    public void onClick(View view) {
+                        finish();
+
+
+
+                    }
+                });
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, ((CodeDelta5)getApplicationContext()).myGlobalArray);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         Spinner spinner =  findViewById(R.id.spinner);
