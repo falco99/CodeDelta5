@@ -66,13 +66,13 @@ public class LoginActivity extends AppCompatActivity
         LoginActivity.this.startActivity(profile);*/
     }
 });
-tvForgot.setOnClickListener(new View.OnClickListener() {
+/*tvForgot.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
         Intent forgotten = new Intent(LoginActivity.this,PasswordResetActivity.class);
         LoginActivity.this.startActivity(forgotten);
     }
-});
+}); */
    tvGuest.setOnClickListener(new View.OnClickListener() {
        @Override
        public void onClick(View v) {
