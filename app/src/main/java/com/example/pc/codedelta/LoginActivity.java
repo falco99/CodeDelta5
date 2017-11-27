@@ -57,7 +57,7 @@ public class LoginActivity extends AppCompatActivity
         checkField();
         //Once the field is determined not empty
 
-        LoginFunction();
+        //LoginFunction();
 
 CheckFinal();
 

@@ -12,11 +12,11 @@
         android:layout_height="wrap_content" />
 
     <EditText
-        android:id="@+id/etFname"
+        android:id="@+id/etName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:hint="@string/fname"
+        android:hint="@string/name"
         android:inputType="textPersonName" />
 
     <TextView

@@ -10,7 +10,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class SQLiteHelper extends SQLiteOpenHelper
 {
-    static String DATABASE_NAME ="tutor1.db";
+    static String DATABASE_NAME ="tutorapp.db";
     public static final String TABLE_NAME = "people";
     public static final String TABLE_COL_ID="id";
     public static final String COLUMN_NAME ="name";
@@ -30,14 +30,14 @@ public class SQLiteHelper extends SQLiteOpenHelper
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase)
     {
-        String SQL_CREATE_TABLE ="CREATE TABLE IF NOT EXISTS " +
-                TABLE_NAME + " (" + TABLE_COL_ID +" INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                COLUMN_NAME + " VARCHAR," +
+        String SQL_CREATE_TABLE ="CREATE TABLE " +
+                TABLE_NAME + "(" + TABLE_COL_ID +" INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                COLUMN_NAME + "VARCHAR," +
 
-                COLUMN_D0B + " VARCHAR," +
-                COLUMN_PHONE +" VARCHAR," +
-                COLUMN_USERNAME +" VARCHAR,"+
-                COLUMN_PASSWORD + " VARCHAR" +");";
+                COLUMN_D0B + "VARCHAR," +
+                COLUMN_PHONE +"VARCHAR," +
+                COLUMN_USERNAME +"VARCHAR,"+
+                COLUMN_PASSWORD + "VARCHAR" +");";
 
      sqLiteDatabase.execSQL(SQL_CREATE_TABLE);
     }
