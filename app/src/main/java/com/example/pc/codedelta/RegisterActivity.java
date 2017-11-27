@@ -54,7 +54,7 @@ public class RegisterActivity extends AppCompatActivity {
                 CheckField();
 
                Checkingusername();
-                EmptyField();
+                //EmptyField();
 
                 /*addNewUser(etName.getText().toString(),etDob.getText().toString(),etPhone.getText().toString(),
                         etUsername.getText().toString(), etPassword.getText().toString());
@@ -148,7 +148,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 
             sqLiteDatabaseObj.close();
-
+            EmptyField();
             // Printing toast message after done inserting.
             Toast.makeText(RegisterActivity.this,"User Registered Successfully", Toast.LENGTH_LONG).show();
         } else{
