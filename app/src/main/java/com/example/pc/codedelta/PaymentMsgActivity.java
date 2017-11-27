@@ -86,6 +86,57 @@ public class PaymentMsgActivity extends AppCompatActivity {
                             }.start();
 
                         }
+                        if(validPay) {
+                            int i;
+                            for (i = 0; i < ((CodeDelta5) getApplicationContext()).myGlobalArray.size(); i++) {
+                                if (((CodeDelta5) getApplicationContext()).myGlobalArray.get(i).contains(total_cost_str)) {
+                                    break;
+                                }
+
+                            }
+                            String arrNumbersOnly = ((CodeDelta5) getApplicationContext()).myGlobalArray.get(i).replaceAll("[^0-9,.]", "");
+                            double arrDouble = Double.parseDouble(arrNumbersOnly);
+                            String fieldVal = editText.getText().toString();
+                            String numberOnly = fieldVal.replaceAll("[^0-9,.-]", "");
+                            double fieldValDbl = Double.parseDouble(numberOnly);
+                            if (fieldValDbl > arrDouble) {
+                                validPay = false;
+                                editText.setText(empty_holder);
+                                new CountDownTimer(5000, 1000) {
+                                    TextView textView2 = findViewById(R.id.textView4);
+
+                                    @Override
+                                    public void onTick(long millisUntilFinished) {
+                                        textView2.setTextColor(Color.RED);
+                                        textView2.setText(over_paid);
+                                    }
+
+                                    @Override
+                                    public void onFinish() {
+                                        textView2.setTextColor(Color.BLACK);
+                                        textView2.setText(pay_prompt);
+                                    }
+                                }.start();
+                            } else if (fieldValDbl < 0.00) {
+                                validPay = false;
+                                editText.setText(empty_holder);
+                                new CountDownTimer(5000, 1000) {
+                                    TextView textView2 = findViewById(R.id.textView4);
+
+                                    @Override
+                                    public void onTick(long millisUntilFinished) {
+                                        textView2.setTextColor(Color.RED);
+                                        textView2.setText(neg_val);
+                                    }
+
+                                    @Override
+                                    public void onFinish() {
+                                        textView2.setTextColor(Color.BLACK);
+                                        textView2.setText(pay_prompt);
+                                    }
+                                }.start();
+                            }
+                        }
                         if(validPay)
                         {
                             final int PICK_CONTACT_REQUEST = 1;
@@ -221,45 +272,6 @@ public class PaymentMsgActivity extends AppCompatActivity {
             {
                 ((CodeDelta5)getApplicationContext()).myGlobalArray.remove(i);
                 finish();
-            }
-            else if(fieldValDbl>arrDouble) {
-                editText.setText(empty_holder);
-                new CountDownTimer(5000, 1000) {
-                    TextView textView2 = findViewById(R.id.textView4);
-
-                    @Override
-                    public void onTick(long millisUntilFinished) {
-                        textView2.setTextColor(Color.RED);
-                        textView2.setText(over_paid);
-                    }
-
-                    @Override
-                    public void onFinish() {
-                        textView2.setTextColor(Color.BLACK);
-                        textView2.setText(pay_prompt);
-                    }
-
-                }.start();
-            }
-            else if(fieldValDbl<0.00)
-            {
-                editText.setText(empty_holder);
-                new CountDownTimer(5000, 1000) {
-                    TextView textView2 = findViewById(R.id.textView4);
-
-                    @Override
-                    public void onTick(long millisUntilFinished) {
-                        textView2.setTextColor(Color.RED);
-                        textView2.setText(neg_val);
-                    }
-
-                    @Override
-                    public void onFinish() {
-                        textView2.setTextColor(Color.BLACK);
-                        textView2.setText(pay_prompt);
-                    }
-
-                }.start();
             }
             else
             {
