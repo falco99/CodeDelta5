@@ -26,13 +26,14 @@
             android:name=".LoginActivity"
             android:exported="true"
             android:label="@string/title_activity_login" />
-        <activity android:name=".RegisterActivity"
+        <activity
+            android:name=".RegisterActivity"
             android:exported="true" />
         <activity android:name=".ProfileActivity" />
+
         <intent-filter>
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
-
 
         <activity
             android:name=".PaymentActivity"
@@ -42,22 +43,19 @@
             android:name=".TutoringCategories"
             android:exported="true" />
         <activity
-            android:name=".TestCalendarActivity"
-            android:exported="true" />
-        <activity
             android:name=".TutorList"
             android:exported="true" />
         <activity
-            android:name=".searchedTutorProfile"
+            android:name=".TestCalendarActivity"
             android:exported="true" />
-
         <activity
             android:name=".TestAppointmentListActivity"
-
             android:exported="true" />
         <activity android:name=".payment_cc_entry" />
-        <activity android:name=".AppointmentsTestActivity"
-            android:exported="true"></activity>
+        <activity
+            android:name=".AppointmentsTestActivity"
+            android:exported="true" />
+        <activity android:name=".Appointment_Request_Activity"></activity>
     </application>
 
 </manifest>
