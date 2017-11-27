@@ -125,7 +125,7 @@ public void CheckFinal(){
     if(tempPassword.equalsIgnoreCase(password))
     {
 
-        Toast.makeText(LoginActivity.this,"Login Successfully",Toast.LENGTH_LONG).show();
+        Toast.makeText(LoginActivity.this,"Login Successfully! ",Toast.LENGTH_LONG).show();
 
 
         Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);
