@@ -23,7 +23,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bLogout"
-        app:layout_constraintVertical_bias="0.838" />
+        app:layout_constraintVertical_bias="0.588" />
 
     <TextView
         android:id="@+id/tvSearchClass"
@@ -70,10 +70,10 @@
         android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.025"
+        app:layout_constraintHorizontal_bias="0.028"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView5"
-        app:layout_constraintVertical_bias="0.373" />
+        app:layout_constraintVertical_bias="0.25" />
 
     <TextView
         android:id="@+id/tvSendMessage"
@@ -87,10 +87,10 @@
         android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.026"
+        app:layout_constraintHorizontal_bias="0.028"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView5"
-        app:layout_constraintVertical_bias="0.463" />
+        app:layout_constraintVertical_bias="0.77" />
 
     <TextView
         android:id="@+id/tvRatings"
@@ -107,7 +107,7 @@
         app:layout_constraintHorizontal_bias="0.025"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView5"
-        app:layout_constraintVertical_bias="0.28" />
+        app:layout_constraintVertical_bias="0.359" />
 
     <TextView
         android:id="@+id/tvPayment"
