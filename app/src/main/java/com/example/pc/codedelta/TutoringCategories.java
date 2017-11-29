@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class TutoringCategories extends AppCompatActivity {
@@ -106,6 +107,16 @@ public class TutoringCategories extends AppCompatActivity {
                 intent.putExtra("secondField", text2);
                 intent.putExtra("thirdField", text3);
                 startActivity(intent);
+            }
+        });
+
+        final TextView searchLink = findViewById(R.id.textView21);
+
+        searchLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent app1 = new Intent(TutoringCategories.this,Search.class);
+                TutoringCategories.this.startActivity(app1);
             }
         });
 
