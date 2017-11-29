@@ -254,6 +254,8 @@ public class PaymentMsgActivity extends AppCompatActivity {
         }
         else
         {
+            Toast.makeText(this, "Payment successful.",
+                    Toast.LENGTH_LONG).show();
             int i;
             for(i = 0; i <((CodeDelta5)getApplicationContext()).myGlobalArray.size(); i ++)
             {
