@@ -39,7 +39,7 @@ public class CodeDelta5 extends Application {
             myGlobalArray.add("Trevor $15.30");
             myGlobalArray.add("Shelly $105.50");
         }
-        ccNumber = 	"11111111111111111";
+        ccNumber = 	"1111111111111111";
         security_No = "111";
         ccMonth = "11";
         ccYear = "11";
