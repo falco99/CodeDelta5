@@ -16,9 +16,9 @@ import java.util.ArrayList;
 public class TestAppointmentListActivity extends AppCompatActivity {
     private static final String TAG = "TestAppointmentListActi";
 // jhuyuuu
-    int[] images = {R.drawable.chrisprofile,R.drawable.trevorcartoonprofile,R.drawable.shelly,R.drawable.chrisprofile};
-    String[] names = {"Chris","Trevor","Shelly","Chris"};
-    String[] dates = {"Monday 12:00pm Arlington","Tuesday 12:00pm Arlington","Wednesday 12:00pm Arlington","Thursday 12:00pm Arlington"};
+    int[] images = {R.drawable.chrisprofile,R.drawable.trevorcartoonprofile,R.drawable.shelly,R.drawable.chrisprofile,R.drawable.bob};
+    String[] names = {"Chris","Trevor","Shelly","Chris","Bob"};
+    String[] dates = {"Monday 12:00pm Arlington","Tuesday 12:00pm Arlington","Wednesday 12:00pm Arlington","Thursday 12:00pm Arlington","Friday 2:00 pm Arlington"};
     ListView list;
 
     @Override
