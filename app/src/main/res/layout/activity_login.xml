@@ -26,8 +26,9 @@
         android:layout_marginBottom="15dp"
         android:layout_marginTop="25dp"
 
-        android:hint="             username"
+        android:hint="username"
         android:inputType="text"
+        android:textAlignment="center"
         android:textColor="#ffffff"
         android:textColorHint="#ffffff" />
 
@@ -41,8 +42,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="50dp"
-        android:hint="             password"
+        android:hint="password"
         android:inputType="textPassword"
+        android:textAlignment="center"
         android:textColor="#ffffff"
         android:textColorHint="#ffffff" />
 
