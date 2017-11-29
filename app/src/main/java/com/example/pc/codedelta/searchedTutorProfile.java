@@ -39,8 +39,8 @@ public class searchedTutorProfile extends AppCompatActivity {
      //   }
        // int location = Integer.parseInt(temp);
 
-        Toast.makeText(this, temp,
-                Toast.LENGTH_LONG).show();
+       // Toast.makeText(this, temp,
+         //       Toast.LENGTH_LONG).show();
 
 
         TextView textFirst = findViewById(R.id.first);
