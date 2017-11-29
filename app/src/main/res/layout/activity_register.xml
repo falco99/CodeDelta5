@@ -6,66 +6,68 @@
     android:background="@drawable/sleek"
 
     android:orientation="vertical"
-    android:padding="10dp"
     tools:context="com.example.pc.codedelta.LoginActivity">
-    <TextView
-        android:layout_width="wrap_content"
-
-        android:layout_height="wrap_content"
-        android:textColor="#ffffff"/>
 
     <ImageView
         android:id="@+id/imageView7"
         android:layout_width="match_parent"
-        android:layout_height="258dp"
+        android:layout_height="161dp"
         app:srcCompat="@drawable/frogtut" />
+
+    <TextView
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff" />
 
     <EditText
         android:id="@+id/etName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
+        android:background="#ffffff"
         android:hint="@string/name"
         android:inputType="textPersonName"
-        android:textColor="#000000"
-        android:background="#ffffff"/>
+        android:textColor="#000000" />
 
     <TextView
         android:layout_width="wrap_content"
 
         android:layout_height="wrap_content"
-        android:textColor="#ffffff"/>
+        android:textColor="#ffffff" />
 
     <EditText
         android:id="@+id/etPhone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:hint="@string/phone"
+        android:background="#ffffff"
+        android:hint="Phone#"
         android:inputType="phone"
-        android:textColor="#000000"
-        android:background="#ffffff"/>
+        android:textColor="#000000" />
+
     <TextView
         android:layout_width="wrap_content"
 
         android:layout_height="wrap_content"
-        android:textColor="#000000"
-        android:background="#ffffff"/>
+        android:background="#ffffff"
+        android:textColor="#000000" />
 
     <EditText
         android:id="@+id/etDob"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
+        android:background="#ffffff"
         android:hint="@string/dob"
         android:inputType="date"
-        android:textColor="#000000"
-        android:background="#ffffff"/>
+        android:textColor="#000000" />
+
     <TextView
         android:layout_width="wrap_content"
 
         android:layout_height="wrap_content"
-        android:textColor="#ffffff"/>
+        android:textColor="#ffffff" />
 
 
     <EditText
@@ -73,10 +75,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
+        android:background="#ffffff"
         android:hint="@string/username"
         android:textColor="#000000"
-        android:visibility="visible"
-        android:background="#ffffff"/>
+        android:visibility="visible" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -87,26 +89,25 @@
         android:id="@+id/etPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="#ffffff"
         android:hint="@string/password"
         android:inputType="textPassword"
-        android:textColor="#000000"
-        android:background="#ffffff"/>
+        android:textColor="#000000" />
 
     <Button
         android:id="@+id/bRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/register"
-        />
+        android:text="@string/register" />
 
     <TextView
         android:id="@+id/tvCancel"
         android:layout_width="76dp"
         android:layout_height="40dp"
-        android:text="@string/cancel"
-        android:textStyle="bold"
         android:layout_gravity="right"
+        android:text="@string/cancel"
         android:textColor="#ffffff"
-        />
+        android:textStyle="bold" />
 
 </LinearLayout>
