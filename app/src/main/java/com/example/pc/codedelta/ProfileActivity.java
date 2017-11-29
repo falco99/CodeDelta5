@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class ProfileActivity extends AppCompatActivity {
-
+Button btn1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,7 +17,7 @@ public class ProfileActivity extends AppCompatActivity {
         final Button bLogout = findViewById(R.id.bLogout);
         final TextView tvRequest =findViewById(R.id.tvRequest);
         final TextView tvPayment = findViewById(R.id.tvPayment);
-
+        final TextView tvSendMessage = findViewById(R.id.tvSendMessage);
         tvRequest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,6 +38,14 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent logout = new Intent(ProfileActivity.this,PaymentActivity.class);
+                ProfileActivity.this.startActivity(logout);
+            }
+        });
+
+        tvSendMessage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent logout = new Intent(ProfileActivity.this,TutorList.class);
                 ProfileActivity.this.startActivity(logout);
             }
         });
