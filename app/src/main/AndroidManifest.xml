@@ -51,6 +51,9 @@
         <activity
             android:name=".TestAppointmentListActivity"
             android:exported="true" />
+        <activity
+            android:name=".searchedTutorProfile"
+            android:exported="true" />
         <activity android:name=".payment_cc_entry" />
         <activity
             android:name=".AppointmentsTestActivity"
