@@ -49,10 +49,10 @@
             android:name=".TestCalendarActivity"
             android:exported="true" />
         <activity
-            android:name=".TestAppointmentListActivity"
+            android:name=".searchedTutorProfile"
             android:exported="true" />
         <activity
-            android:name=".searchedTutorProfile"
+            android:name=".TestAppointmentListActivity"
             android:exported="true" />
 
         <activity android:name=".payment_cc_entry" />
@@ -64,15 +64,13 @@
             android:name=".Communicate2Activity"
             android:exported="true" />
         <activity android:name=".SentActivity" />
-
         <activity
             android:name=".Search"
             android:exported="true" />
         <activity
             android:name=".Review"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
+        <activity android:name=".DevelopersActivity"></activity>
     </application>
 
 </manifest>

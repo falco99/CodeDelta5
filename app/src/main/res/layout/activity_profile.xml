@@ -9,23 +9,6 @@
 
 
     <TextView
-        android:id="@+id/tvCourseList"
-        android:layout_width="117dp"
-        android:layout_height="23dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:text="-- Course List --"
-        android:textColor="#ffffff"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bLogout"
-        app:layout_constraintVertical_bias="0.588" />
-
-    <TextView
         android:id="@+id/tvSearchClass"
         android:layout_width="128dp"
         android:layout_height="26dp"
@@ -33,14 +16,14 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="-- Search Classes --"
+        android:text="-- Search Tutor --"
         android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.026"
+        app:layout_constraintHorizontal_bias="0.033"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.777" />
+        app:layout_constraintVertical_bias="0.739" />
 
     <Button
         android:id="@+id/bLogout"
@@ -76,23 +59,6 @@
         app:layout_constraintVertical_bias="0.25" />
 
     <TextView
-        android:id="@+id/tvSendMessage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="-- Send Message --"
-        android:textColor="#ffffff"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.028"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5"
-        app:layout_constraintVertical_bias="0.77" />
-
-    <TextView
         android:id="@+id/tvRatings"
         android:layout_width="78dp"
         android:layout_height="27dp"
@@ -121,10 +87,10 @@
         android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.025"
+        app:layout_constraintHorizontal_bias="0.033"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.7" />
+        app:layout_constraintVertical_bias="0.655" />
 
     <ImageView
         android:id="@+id/imageView5"
@@ -198,6 +164,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.394" />
+
+    <TextView
+        android:id="@+id/tvBrowse"
+        android:layout_width="164dp"
+        android:layout_height="25dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="-- Browse Categories --"
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.033"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.813" />
 
 
 </android.support.constraint.ConstraintLayout>
