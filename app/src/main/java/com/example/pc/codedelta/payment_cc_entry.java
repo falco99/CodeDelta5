@@ -63,7 +63,7 @@ public class payment_cc_entry extends AppCompatActivity {
             et6.setText("");
             et7.setText("");
             Toast.makeText(this, "Invalid credit card data entered!",
-                    Toast.LENGTH_LONG).show();
+                Toast.LENGTH_LONG).show();
         }
     }
 }

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.pc.codedelta.Search">
+    tools:context="com.example.pc.codedelta.Search"
+    android:background="@drawable/sleek">
 
     <AutoCompleteTextView
         android:id="@+id/autoCompleteTextView"
@@ -13,13 +14,14 @@
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:text="AutoCompleteTextView"
+        android:accessibilityTraversalBefore="@+id/autoCompleteTextView"
+        android:background="#ffffff"
+        android:text="Tutor Name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.343" />
+        app:layout_constraintVertical_bias="0.36" />
 
     <TextView
         android:id="@+id/textView20"
@@ -29,8 +31,17 @@
         android:layout_marginStart="184dp"
         android:layout_marginTop="156dp"
         android:text="Search"
+        android:textColor="#ffffff"
         app:layout_constraintBottom_toTopOf="@+id/autoCompleteTextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.76" />
+        app:layout_constraintVertical_bias="0.619" />
+
+    <Button
+        android:id="@+id/button11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search"
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="278dp" />
 </android.support.constraint.ConstraintLayout>

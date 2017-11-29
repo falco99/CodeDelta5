@@ -105,9 +105,54 @@ public class TutorList extends AppCompatActivity {
             String firstField = i.getStringExtra("firstField");
             String secondField = i.getStringExtra("secondField");
             String thirdField = i.getStringExtra("thirdField");
+            String searchedName = i.getStringExtra("searchedName");
+            String searchOrCategory = i.getStringExtra("searchOrCategory");
+
+           // String temp = imageLocation.replaceAll("[^0-9]","");
+            //   try{
+           // int location = Integer.parseInt(temp);
+
+
+            if(searchOrCategory.equals("0"))
+            {
+                if(((CodeDelta5)getApplicationContext()).firstNames[position].equals(searchedName))
+                {
+                    mImageView.setImageResource(((CodeDelta5)getApplicationContext()).images[position]);
+                    mNameView.setText(((CodeDelta5)getApplicationContext()).firstNames[position]);
+                    mDateView.setText(((CodeDelta5)getApplicationContext()).lastNames[position]);
+                }
+                else{
+                    mImageView.setImageResource(android.R.color.transparent);
+                    mNameView.setText("");
+                    mDateView.setText("");
+                }
+            }
+            else{
+                if(((CodeDelta5)getApplicationContext()).tutorLocations[position].equals(firstField)
+                        && (((CodeDelta5)getApplicationContext()).tutorLevels[position][0].equals(secondField)
+                        || ((CodeDelta5)getApplicationContext()).tutorLevels[position][1].equals(secondField) )
+                        && (((CodeDelta5)getApplicationContext()).tutorCategories[position][0].equals(thirdField)
+                        || ((CodeDelta5)getApplicationContext()).tutorCategories[position][1].equals(thirdField) )){
+
+                    mImageView.setImageResource(((CodeDelta5)getApplicationContext()).images[position]);
+                    mNameView.setText(((CodeDelta5)getApplicationContext()).firstNames[position]);
+                    mDateView.setText(((CodeDelta5)getApplicationContext()).lastNames[position]);
+                    this.count++;
+                }
+                else{
+                    mImageView.setImageResource(android.R.color.transparent);
+                    mNameView.setText("");
+                    mDateView.setText("");
+                }
+            }
 
             // testing firstField = tutorLocations tutorList bring up
-            if(((CodeDelta5)getApplicationContext()).tutorLocations[position].equals(firstField)){
+            /*if(((CodeDelta5)getApplicationContext()).tutorLocations[position].equals(firstField)
+                    && (((CodeDelta5)getApplicationContext()).tutorLevels[position][0].equals(secondField)
+                    || ((CodeDelta5)getApplicationContext()).tutorLevels[position][1].equals(secondField) )
+                    && (((CodeDelta5)getApplicationContext()).tutorCategories[position][0].equals(thirdField)
+                    || ((CodeDelta5)getApplicationContext()).tutorCategories[position][1].equals(thirdField) )){
+
                 mImageView.setImageResource(((CodeDelta5)getApplicationContext()).images[position]);
                 mNameView.setText(((CodeDelta5)getApplicationContext()).firstNames[position]);
                 mDateView.setText(((CodeDelta5)getApplicationContext()).lastNames[position]);
@@ -117,25 +162,9 @@ public class TutorList extends AppCompatActivity {
                 mImageView.setImageResource(android.R.color.transparent);
                 mNameView.setText("");
                 mDateView.setText("");
-            }
-
-            // check firstField with tutorLocations
-            // check secondField with tutorLevels
-            // check thirdField with tutorCategories
-
-           /* if(((CodeDelta5)getApplicationContext()).tutorLocations[position].equals(firstField) &&
-                    ((CodeDelta5)getApplicationContext()).tutorLevels[position].equals(secondField) &&
-                    ((CodeDelta5)getApplicationContext()).tutorCategories[position].equals(thirdField))
-            {
-                mImageView.setImageResource(((CodeDelta5)getApplicationContext()).images[position]);
-                mNameView.setText(((CodeDelta5)getApplicationContext()).firstNames[position]);
-                mDateView.setText(((CodeDelta5)getApplicationContext()).lastNames[position]);
             } */
 
-           // Needs to be a data check here to insure that the tutors shown have the correct fields.
-          //  mImageView.setImageResource(((CodeDelta5)getApplicationContext()).images[position]);
-          //  mNameView.setText(((CodeDelta5)getApplicationContext()).firstNames[position]);
-          //  mDateView.setText(((CodeDelta5)getApplicationContext()).lastNames[position]);
+
 
 
             return view;

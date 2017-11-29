@@ -103,6 +103,7 @@ public class TutoringCategories extends AppCompatActivity {
                 intent.putExtra("firstField", text1);
                 intent.putExtra("secondField", text2);
                 intent.putExtra("thirdField", text3);
+                intent.putExtra("searchOrCategory", "1");
                 startActivity(intent);
             }
         });
