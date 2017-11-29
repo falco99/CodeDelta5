@@ -16,9 +16,9 @@ public class CodeDelta5 extends Application {
     public String ccYear;
 
     // used in tutoring categories
-    public String[] locations = {"Arlington TX", "Dallas TX", "Tyler TX", "Test Location"};
-    public String[] level = {"Elementary","Middle School","High School","University", "Test Level"};
-    public String[] category = {"Math","Science","Language","Art","History","Writing", "Test Category"};
+    public String[] locations = {"Arlington TX", "Dallas TX", "Tyler TX"};
+    public String[] level = {"Elementary","Middle School","High School","University"};
+    public String[] category = {"Math","Science","Language","Art","History","Writing"};
 
     // chris = 0, Trevor = 1, Shelly = 2, Tyler = 3
     public String[] tutorLocations = {"Arlington TX", "Arlington TX", "Dallas TX", "Dallas TX" };

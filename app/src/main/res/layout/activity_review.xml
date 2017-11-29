@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.pc.codedelta.Review">
+    tools:context="com.example.pc.codedelta.Review"
+    android:background="@drawable/sleek">
 
     <RatingBar
         android:id="@+id/ratingBar"
@@ -12,6 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="84dp"
         android:layout_marginTop="80dp"
+        android:background="#ffffff"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -19,22 +21,22 @@
         android:id="@+id/button10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="320dp"
+        android:layout_marginBottom="88dp"
         android:layout_marginStart="160dp"
         android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editText3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="420dp"
-        android:layout_marginStart="96dp"
+        android:id="@+id/editText5"
+        android:layout_width="265dp"
+        android:layout_height="271dp"
+        android:background="#ffffff"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
+        android:inputType="textMultiLine|textLongMessage"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

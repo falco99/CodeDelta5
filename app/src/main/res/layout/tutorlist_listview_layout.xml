@@ -22,6 +22,7 @@
 
         <TextView
             android:id="@+id/tutorFName"
+            android:textColor="#ffffff"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/imageViewTutorList"
@@ -31,6 +32,7 @@
 
         <TextView
             android:id="@+id/tutorLName"
+            android:textColor="#ffffff"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignStart="@+id/tutorFName"
