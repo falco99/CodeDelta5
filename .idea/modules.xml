@@ -3,8 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CodeDelta5.iml" filepath="$PROJECT_DIR$/CodeDelta5.iml" />
-      <module fileurl="file://C:\Users\Cory\StudioProjects\CodeDelta9\CodeDelta5.iml" filepath="C:\Users\Cory\StudioProjects\CodeDelta9\CodeDelta5.iml" />
-      <module fileurl="file://C:\Users\ittak\AndroidStudioProjects\CodeDelta5\CodeDelta9.iml" filepath="C:\Users\ittak\AndroidStudioProjects\CodeDelta5\CodeDelta9.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

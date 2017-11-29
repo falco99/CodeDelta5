@@ -110,9 +110,10 @@ public class LoginActivity extends AppCompatActivity
                 cursor.moveToFirst();
                 tempPassword = cursor.getString(cursor.getColumnIndex(SQLiteHelper.COLUMN_PASSWORD));
 
-                cursor.close();
+                //cursor.close();
             }
         }
+        cursor.close();
         CheckFinal();
 
       }else {

@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
-EditText etHeader;
+
 Button bCheck,bDevelopers;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,9 +17,10 @@ Button bCheck,bDevelopers;
         // some testing comment
         //gradle update check
        bCheck = findViewById(R.id.bCheck);
-       etHeader = findViewById(R.id.etHeader);
-        etHeader.setKeyListener(null);
-        etHeader.setEnabled(false);
+
+        bDevelopers = findViewById(R.id.bDevelopers);
+
+
 
 
 
@@ -30,5 +31,13 @@ Button bCheck,bDevelopers;
               MainActivity.this.startActivity(intent);
           }
       });
+
+        bDevelopers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,DevelopersActivity.class);
+                MainActivity.this.startActivity(intent);
+            }
+        });
     }
 }

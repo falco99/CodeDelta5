@@ -17,6 +17,7 @@ public class ProfileActivity extends AppCompatActivity {
         final Button bLogout = findViewById(R.id.bLogout);
         final TextView tvRequest =findViewById(R.id.tvRequest);
         final TextView tvPayment = findViewById(R.id.tvPayment);
+        final TextView tvBrowse = findViewById(R.id.tvBrowse);
 
         tvRequest.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,7 +44,13 @@ public class ProfileActivity extends AppCompatActivity {
         });
 
 
-
+tvBrowse.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        Intent intent = new Intent(ProfileActivity.this, TutoringCategories.class);
+        ProfileActivity.this.startActivity(intent);
+    }
+});
 
 
     }

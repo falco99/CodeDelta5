@@ -112,15 +112,18 @@ public class RegisterActivity extends AppCompatActivity {
                 cursor.moveToFirst();
                 Result = "Found";
 
-                cursor.close();
+                //cursor.close();
             }
+
         }
+        cursor.close();
+
         CheckFinal();
     }
 
     public void CheckFinal()
     {
-      /*  if(Result.equalsIgnoreCase("Found"))
+       /* if(Result.equalsIgnoreCase("Found"))
         {
 
             // If username already exists then toast msg will display.
