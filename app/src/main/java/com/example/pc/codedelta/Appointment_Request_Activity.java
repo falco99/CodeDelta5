@@ -24,6 +24,6 @@ public class Appointment_Request_Activity extends AppCompatActivity {
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         Spinner spinner2 =  findViewById(R.id.spinner5);
         spinner2.setAdapter(adapter2);
-        //dd
+        //ddd
     }
 }

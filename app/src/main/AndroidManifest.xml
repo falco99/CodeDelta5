@@ -58,7 +58,14 @@
         <activity
             android:name=".AppointmentsTestActivity"
             android:exported="true" />
-        <activity android:name=".Appointment_Request_Activity"></activity>
+        <activity android:name=".Appointment_Request_Activity" />
+        <activity
+            android:name=".Communicate2Activity"
+            android:exported="true" />
+        <activity android:name=".SentActivity"></activity>
+        <activity
+            android:name=".searchedTutorProfile"
+            android:exported="true" />
     </application>
 
 </manifest>
