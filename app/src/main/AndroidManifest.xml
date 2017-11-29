@@ -60,6 +60,9 @@
             android:name=".Communicate2Activity"
             android:exported="true" />
         <activity android:name=".SentActivity"></activity>
+        <activity
+            android:name=".searchedTutorProfile"
+            android:exported="true" />
     </application>
 
 </manifest>
