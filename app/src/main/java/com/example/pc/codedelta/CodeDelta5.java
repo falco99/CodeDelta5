@@ -20,10 +20,11 @@ public class CodeDelta5 extends Application {
     public String[] level = {"Elementary","Middle School","High School","University", "Test Level"};
     public String[] category = {"Math","Science","Language","Art","History","Writing", "Test Category"};
 
-    public String[] tutorLocations = {"Arlington TX", "Arlington TX", "Dallas Tx", "Dallas TX" };
-    public String[][] tutorLevels = {{"Elementary", "Middle School", "High School"}, {"University"}, {"Middle School", "High School", "University"},
-                                      {"High School", "University"}};
-    public String[][] tutorCategories = {{"Math", "Science"}, {"Math", "Science", "History"},
+    // chris = 0, Trevor = 1, Shelly = 2, Tyler = 3
+    public String[] tutorLocations = {"Arlington TX", "Arlington TX", "Dallas TX", "Dallas TX" };
+    public String[][] tutorLevels = {{"Middle School", "High School"}, {"Middle School", "University"}, {"High School", "University"},
+                                      {"Elementary", "Middle School"}};
+    public String[][] tutorCategories = {{"Math", "Science"}, {"Math", "History"},
                                          {"History", "Writing"}, {"Writing", "Language"}};
 
     // used in TutorList

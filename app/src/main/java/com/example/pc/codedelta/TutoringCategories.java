@@ -31,9 +31,6 @@ public class TutoringCategories extends AppCompatActivity {
         final Spinner mySpinner2 = findViewById(R.id.spinner2);
         final Spinner mySpinner3 = findViewById(R.id.spinner3);
 
-        // Spinner mySpinner=(Spinner) findViewById(R.id.your_spinner);
-        // String text = mySpinner.getSelectedItem().toString();
-
         // Code for Spinner 1
         ArrayAdapter<String> myAdapter1 = new ArrayAdapter<String>(TutoringCategories.this,
                 android.R.layout.simple_list_item_1, ((CodeDelta5) getApplicationContext()).locations);
@@ -46,8 +43,8 @@ public class TutoringCategories extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String spinner1Text = mySpinner1.getSelectedItem().toString();
                 text1 = spinner1Text;
-                Toast.makeText(getApplicationContext(), text1,
-                        Toast.LENGTH_LONG).show();
+               // Toast.makeText(getApplicationContext(), text1,
+                  //      Toast.LENGTH_LONG).show();
             }
 
             @Override
@@ -67,8 +64,8 @@ public class TutoringCategories extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String spinner2Text = mySpinner2.getSelectedItem().toString();
                 text2 = spinner2Text;
-                Toast.makeText(getApplicationContext(), text2,
-                        Toast.LENGTH_LONG).show();
+             //   Toast.makeText(getApplicationContext(), text2,
+               //         Toast.LENGTH_LONG).show();
             }
 
             @Override
@@ -88,8 +85,8 @@ public class TutoringCategories extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String spinner3Text = mySpinner3.getSelectedItem().toString();
                 text3 = spinner3Text;
-                Toast.makeText(getApplicationContext(), text3,
-                        Toast.LENGTH_LONG).show();
+               // Toast.makeText(getApplicationContext(), text3,
+                //        Toast.LENGTH_LONG).show();
             }
 
             @Override

@@ -1,5 +1,6 @@
 package com.example.pc.codedelta;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,13 +21,15 @@ public class TutorList extends AppCompatActivity {
     private static final String TAG = "Tutorlist";
 
     ListView list;
+   // int count = 0;
+   // boolean viewEmpty = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tutor_list);
+        setContentView(R.layout.activity_tutor_list); // this is the actual listview
 
-        Intent i = getIntent();
+    /*    Intent i = getIntent();
 
         String firstField = i.getStringExtra("firstField");
         Toast.makeText(this, firstField,
@@ -38,7 +41,7 @@ public class TutorList extends AppCompatActivity {
 
         String thirdField = i.getStringExtra("thirdField");
         Toast.makeText(this, thirdField,
-                Toast.LENGTH_LONG).show();
+                Toast.LENGTH_LONG).show(); */
 
          /* Need to check passed in fields with tutor values
          *  Any tutor that has all three fields met, should be displayed.
@@ -59,6 +62,10 @@ public class TutorList extends AppCompatActivity {
                 intent.putExtra("last", ((CodeDelta5)getApplicationContext()).lastNames[position]);
                 String location = Integer.toString(position);
                 intent.putExtra("imageLocation", location);
+                String firstCategory = (((CodeDelta5)getApplicationContext()).tutorCategories[position][0]);
+                String secondCategory = (((CodeDelta5)getApplicationContext()).tutorCategories[position][1]);
+                intent.putExtra("categoriesTaught1", firstCategory);
+                intent.putExtra("categoriesTaught2", secondCategory);
                 startActivity(intent);
             }
         });
@@ -67,10 +74,12 @@ public class TutorList extends AppCompatActivity {
 
     class CustomAdapter extends BaseAdapter{
 
+        int count = 0;
+
         @Override
         public int getCount() {
             return ((CodeDelta5)getApplicationContext()).images.length;
-        }
+        } // I think this is setting the size of the listview, i want this to be dynamic
 
         @Override
         public Object getItem(int position) {
@@ -97,6 +106,18 @@ public class TutorList extends AppCompatActivity {
             String secondField = i.getStringExtra("secondField");
             String thirdField = i.getStringExtra("thirdField");
 
+            // testing firstField = tutorLocations tutorList bring up
+            if(((CodeDelta5)getApplicationContext()).tutorLocations[position].equals(firstField)){
+                mImageView.setImageResource(((CodeDelta5)getApplicationContext()).images[position]);
+                mNameView.setText(((CodeDelta5)getApplicationContext()).firstNames[position]);
+                mDateView.setText(((CodeDelta5)getApplicationContext()).lastNames[position]);
+                this.count++;
+            }
+            else{
+                mImageView.setImageResource(android.R.color.transparent);
+                mNameView.setText("");
+                mDateView.setText("");
+            }
 
             // check firstField with tutorLocations
             // check secondField with tutorLevels
@@ -111,10 +132,10 @@ public class TutorList extends AppCompatActivity {
                 mDateView.setText(((CodeDelta5)getApplicationContext()).lastNames[position]);
             } */
 
-            // Needs to be a data check here to insure that the tutors shown have the correct fields.
-            mImageView.setImageResource(((CodeDelta5)getApplicationContext()).images[position]);
-            mNameView.setText(((CodeDelta5)getApplicationContext()).firstNames[position]);
-            mDateView.setText(((CodeDelta5)getApplicationContext()).lastNames[position]);
+           // Needs to be a data check here to insure that the tutors shown have the correct fields.
+          //  mImageView.setImageResource(((CodeDelta5)getApplicationContext()).images[position]);
+          //  mNameView.setText(((CodeDelta5)getApplicationContext()).firstNames[position]);
+          //  mDateView.setText(((CodeDelta5)getApplicationContext()).lastNames[position]);
 
 
             return view;
