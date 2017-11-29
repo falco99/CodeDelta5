@@ -40,6 +40,10 @@ public class TutorList extends AppCompatActivity {
         Toast.makeText(this, thirdField,
                 Toast.LENGTH_LONG).show();
 
+         /* Need to check passed in fields with tutor values
+         *  Any tutor that has all three fields met, should be displayed.
+         *  */
+
 
         Log.d(TAG, "onCreate: Started.");
         list = findViewById(R.id.listview);
@@ -83,13 +87,34 @@ public class TutorList extends AppCompatActivity {
 
             View view = getLayoutInflater().inflate(R.layout.tutorlist_listview_layout, null);
 
-            ImageView mImageView = view.findViewById(R.id.imageViewTutorList);//.imageView2);
+            // Simply connects to the views
+            ImageView mImageView = view.findViewById(R.id.imageViewTutorList);
             TextView mNameView = view.findViewById(R.id.tutorFName);
             TextView mDateView = view.findViewById(R.id.tutorLName);
 
-            mImageView.setImageResource(((CodeDelta5)getApplicationContext()).images[position]); // change to global images
-            mNameView.setText(((CodeDelta5)getApplicationContext()).firstNames[position]); // change to firstNames
-            mDateView.setText(((CodeDelta5)getApplicationContext()).lastNames[position]); // change to lastNames
+            Intent i = getIntent();
+            String firstField = i.getStringExtra("firstField");
+            String secondField = i.getStringExtra("secondField");
+            String thirdField = i.getStringExtra("thirdField");
+
+
+            // check firstField with tutorLocations
+            // check secondField with tutorLevels
+            // check thirdField with tutorCategories
+
+           /* if(((CodeDelta5)getApplicationContext()).tutorLocations[position].equals(firstField) &&
+                    ((CodeDelta5)getApplicationContext()).tutorLevels[position].equals(secondField) &&
+                    ((CodeDelta5)getApplicationContext()).tutorCategories[position].equals(thirdField))
+            {
+                mImageView.setImageResource(((CodeDelta5)getApplicationContext()).images[position]);
+                mNameView.setText(((CodeDelta5)getApplicationContext()).firstNames[position]);
+                mDateView.setText(((CodeDelta5)getApplicationContext()).lastNames[position]);
+            } */
+
+            // Needs to be a data check here to insure that the tutors shown have the correct fields.
+            mImageView.setImageResource(((CodeDelta5)getApplicationContext()).images[position]);
+            mNameView.setText(((CodeDelta5)getApplicationContext()).firstNames[position]);
+            mDateView.setText(((CodeDelta5)getApplicationContext()).lastNames[position]);
 
 
             return view;

@@ -51,6 +51,28 @@ public class searchedTutorProfile extends AppCompatActivity {
         textFirst.setText(firstName);
         textLast.setText(lastName);
 
+
+        final TextView comLink = findViewById(R.id.textView14);
+
+        comLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent app1 = new Intent(searchedTutorProfile.this,Communicate2Activity.class);
+                searchedTutorProfile.this.startActivity(app1);
+            }
+        });
+
+        final TextView apptLink = findViewById(R.id.textView12);
+
+        apptLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent app1 = new Intent(searchedTutorProfile.this,Appointment_Request_Activity.class);
+                searchedTutorProfile.this.startActivity(app1);
+            }
+        });
+
+
     }
 
 }

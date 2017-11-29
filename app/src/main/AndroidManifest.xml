@@ -54,6 +54,7 @@
         <activity
             android:name=".searchedTutorProfile"
             android:exported="true" />
+
         <activity android:name=".payment_cc_entry" />
         <activity
             android:name=".AppointmentsTestActivity"
@@ -62,10 +63,16 @@
         <activity
             android:name=".Communicate2Activity"
             android:exported="true" />
-        <activity android:name=".SentActivity"></activity>
+        <activity android:name=".SentActivity" />
+
         <activity
-            android:name=".searchedTutorProfile"
+            android:name=".Search"
             android:exported="true" />
+        <activity
+            android:name=".Review"
+            android:exported="true">
+
+        </activity>
     </application>
 
 </manifest>
