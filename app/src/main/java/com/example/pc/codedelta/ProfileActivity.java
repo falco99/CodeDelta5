@@ -18,6 +18,7 @@ public class ProfileActivity extends AppCompatActivity {
         final TextView tvRequest =findViewById(R.id.tvRequest);
         final TextView tvPayment = findViewById(R.id.tvPayment);
         final TextView tvBrowse = findViewById(R.id.tvBrowse);
+        final TextView tvRatings = findViewById(R.id.tvRatings);
 
         tvRequest.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,8 +53,17 @@ tvBrowse.setOnClickListener(new View.OnClickListener() {
     }
 });
 
+tvRatings.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        Intent intent = new Intent(ProfileActivity.this,Review.class);
+        ProfileActivity.this.startActivity(intent);
+    }
+});
+
 
     }
+
 
 
 
